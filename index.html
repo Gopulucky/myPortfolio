@@ -6,17 +6,21 @@
   <title>Gopu Hardik - Portfolio</title>
   <!-- Link to the CSS file -->
   <link rel="stylesheet" href="style.css">
+  <!-- FontAwesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
   <!-- Header / Navigation -->
   <header>
     <nav>
-      <!-- CHANGE: Update your name or logo text here -->
       <h1>Gopu Hardik</h1>
       <ul>
+        <li><a href="#hero">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
+        <li><a href="#projects">Work</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#blog">Blog</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -24,69 +28,209 @@
 
   <!-- Hero / Intro Section -->
   <section id="hero">
-    <!-- CHANGE: Update your introduction headline -->
     <h2>Hi, I'm Gopu Hardik</h2>
-    <!-- CHANGE: Update your sub-headline/roles -->
-    <p>fullStackWebDeveloper | AI enthusiast | Student .</p>
+    <p class="role">Full Stack Developer | AI Enthusiast | Student</p>
+    <p class="value-statement">Building scalable web applications with a focus on user experience.</p>
+    <a href="#projects" class="btn-primary">View My Work</a>
   </section>
 
   <!-- About Section -->
   <section id="about">
     <h2>About Me</h2>
-    <!-- CHANGE: Write a brief introduction about your background, interests, and goals -->
-    <p>Write a brief introduction about your background, interests, and goals.</p>
+    <div class="about-content">
+      <div class="about-img">
+         <img src="https://via.placeholder.com/200" alt="Gopu Hardik">
+      </div>
+      <div class="about-text">
+        <p>I am a passionate developer with a strong background in web technologies and artificial intelligence. I love solving complex problems and creating efficient, user-friendly solutions. My journey involves continuous learning and experimenting with new tools to build impactful software.</p>
+        <p>When I'm not coding, I enjoy exploring new tech trends and contributing to open source.</p>
+      </div>
+    </div>
   </section>
 
   <!-- Skills Section -->
   <section id="skills">
     <h2>Skills</h2>
-    <!-- CHANGE: Add or remove skills in the list below -->
     <ul>
       <li>HTML</li>
       <li>CSS</li>
       <li>JavaScript</li>
       <li>Python</li>
       <li>Java</li>
-      <li>GitControl</li>
-      <li>DataStructures</li>
+      <li>Git</li>
+      <li>Data Structures</li>
     </ul>
   </section>
 
   <!-- Projects Section -->
   <section id="projects">
-    <h2>Projects</h2>
-
+    <h2>My Best Work</h2>
     <div class="project-container">
+
       <!-- Project 1 -->
       <article class="project">
-        <!-- CHANGE: Project Title -->
-        <h3>college website</h3>
-        <!-- CHANGE: Project Description -->
-        <p>Short description of what this project does and what you learned.</p>
-        <!-- CHANGE: Project Links -->
-        <a href="https://acumenjuniorcollege.in/" target="_blank">View Project</a>
-        <a href="https://github.com/Gopulucky/college-backend-frontend" target="_blank">Source Code</a>
+        <div class="project-img">
+            <img src="https://via.placeholder.com/300x200" alt="Project 1">
+        </div>
+        <h3>College Website</h3>
+        <p class="role-label">Role: Full Stack Developer</p>
+        <p>A comprehensive website for Acumen Junior College managing student data and information.</p>
+        <div class="tech-stack">
+            <span>HTML/CSS</span>
+            <span>JavaScript</span>
+            <span>PHP</span>
+        </div>
+        <div class="project-links">
+            <a href="https://acumenjuniorcollege.in/" target="_blank">View Project</a>
+            <a href="https://github.com/Gopulucky/college-backend-frontend" target="_blank">Source Code</a>
+        </div>
       </article>
 
       <!-- Project 2 -->
       <article class="project">
-        <h3>Project Title 2</h3>
-        <p>Short description of another project.</p>
-        <a href="#" target="_blank">View Project</a>
-        <a href="#" target="_blank">Source Code</a>
+        <div class="project-img">
+            <img src="https://via.placeholder.com/300x200" alt="Project 2">
+        </div>
+        <h3>E-Commerce Platform</h3>
+        <p class="role-label">Role: Frontend Developer</p>
+        <p>A responsive e-commerce site with product filtering, cart functionality, and checkout process.</p>
+        <div class="tech-stack">
+            <span>React</span>
+            <span>Redux</span>
+            <span>Tailwind</span>
+        </div>
+        <div class="project-links">
+            <a href="#" target="_blank">View Project</a>
+            <a href="#" target="_blank">Source Code</a>
+        </div>
       </article>
 
-      <!-- Add more project articles here as needed -->
+      <!-- Project 3 -->
+      <article class="project">
+        <div class="project-img">
+            <img src="https://via.placeholder.com/300x200" alt="Project 3">
+        </div>
+        <h3>Task Management App</h3>
+        <p class="role-label">Role: Backend Developer</p>
+        <p>A RESTful API for managing tasks, users, and projects with authentication.</p>
+        <div class="tech-stack">
+            <span>Node.js</span>
+            <span>Express</span>
+            <span>MongoDB</span>
+        </div>
+        <div class="project-links">
+            <a href="#" target="_blank">View Project</a>
+            <a href="#" target="_blank">Source Code</a>
+        </div>
+      </article>
+
+      <!-- Project 4 -->
+      <article class="project">
+        <div class="project-img">
+            <img src="https://via.placeholder.com/300x200" alt="Project 4">
+        </div>
+        <h3>AI Image Classifier</h3>
+        <p class="role-label">Role: AI Engineer</p>
+        <p>A Python application that classifies images using deep learning models.</p>
+        <div class="tech-stack">
+            <span>Python</span>
+            <span>TensorFlow</span>
+            <span>OpenCV</span>
+        </div>
+        <div class="project-links">
+            <a href="#" target="_blank">View Project</a>
+            <a href="#" target="_blank">Source Code</a>
+        </div>
+      </article>
+
     </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services">
+    <h2>Services</h2>
+    <div class="services-container">
+        <div class="service-card">
+            <i class="fas fa-laptop-code"></i>
+            <h3>Web Development</h3>
+            <p>Building responsive and high-performance websites tailored to your needs.</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-paint-brush"></i>
+            <h3>UI/UX Design</h3>
+            <p>Creating intuitive and aesthetically pleasing user interfaces.</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-server"></i>
+            <h3>Backend Systems</h3>
+            <p>Developing robust server-side logic and database architectures.</p>
+        </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials">
+      <h2>Testimonials</h2>
+      <div class="testimonials-container">
+          <div class="testimonial-card">
+              <p>"Hardik is a dedicated developer who delivers high-quality work on time. Highly recommended!"</p>
+              <h4>- Jane Doe, Project Manager</h4>
+          </div>
+          <div class="testimonial-card">
+              <p>"Excellent problem-solving skills and great attention to detail."</p>
+              <h4>- John Smith, Lead Developer</h4>
+          </div>
+      </div>
+  </section>
+
+  <!-- Blog Section -->
+  <section id="blog">
+      <h2>Latest Articles</h2>
+      <div class="blog-container">
+          <article class="blog-post">
+              <h3>Getting Started with React</h3>
+              <p>A beginner's guide to building your first component.</p>
+              <a href="#">Read More</a>
+          </article>
+          <article class="blog-post">
+              <h3>The Future of AI in Web Dev</h3>
+              <p>How artificial intelligence is changing the way we build websites.</p>
+              <a href="#">Read More</a>
+          </article>
+      </div>
   </section>
 
   <!-- Contact Section -->
   <section id="contact">
-    <h2>Contact</h2>
-    <!-- CHANGE: Update contact details -->
-    <p>Email: <a href="mailto:gopuhardik@gmail.com">gopuhardik@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/gopu-hardik-842aa530b/" target="_blank">LinkedIn</a></p>
-    <p>GitHub: <a href="https://github.com/Gopulucky" target="_blank">GitHub</a></p>
+    <h2>Contact Me</h2>
+    <p>Feel free to reach out for collaborations or just a friendly hello!</p>
+
+    <div class="contact-container">
+        <form class="contact-form" action="#" method="POST">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn-primary">Send Message</button>
+        </form>
+
+        <div class="contact-info">
+            <p>Email: <a href="mailto:gopuhardik@gmail.com">gopuhardik@gmail.com</a></p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/gopu-hardik-842aa530b/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/Gopulucky" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+            <a href="#" class="btn-secondary">Download Resume</a>
+        </div>
+    </div>
   </section>
 
   <!-- Footer -->
