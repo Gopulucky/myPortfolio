@@ -147,6 +147,7 @@ section h2 {
 #hero h2 {
   font-size: 3rem;
   margin-bottom: 0.5rem;
+  color: var(--white);
 }
 
 #hero .role {
