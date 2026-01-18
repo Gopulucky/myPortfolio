@@ -478,12 +478,40 @@ footer {
 /* Certifications */
 /* Certifications */
 .cert-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: flex;
+  overflow-x: auto;
   gap: 30px;
+  padding-bottom: 20px;
+  /* Space for scrollbar */
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  /* Smooth scrolling on iOS */
+}
+
+/* Custom Scrollbar for Certifications */
+.cert-grid::-webkit-scrollbar {
+  height: 8px;
+}
+
+.cert-grid::-webkit-scrollbar-track {
+  background: var(--light-bg);
+  border-radius: 4px;
+}
+
+.cert-grid::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 4px;
+}
+
+.cert-grid::-webkit-scrollbar-thumb:hover {
+  background: #4db3a4;
 }
 
 .cert-card {
+  flex: 0 0 320px;
+  /* Fixed width for horizontal scroll items */
+  scroll-snap-align: start;
+
   background-color: var(--light-bg);
   border-radius: 8px;
   overflow: hidden;
