@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Mobile Menu Toggle
     const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-    const navLinksItems = document.querySelectorAll('.nav-links li');
+    const navLinks = document.querySelector('.hud-links'); // Updated selector
+    const navLinksItems = document.querySelectorAll('.hud-links li'); // Updated selector
 
     if (hamburger) {
         hamburger.addEventListener('click', () => {
