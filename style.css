@@ -477,40 +477,38 @@ footer {
 
 /* Certifications */
 /* Certifications */
+/* Certifications - Infinite Scroll */
 .cert-grid {
-  display: flex;
-  overflow-x: auto;
-  gap: 30px;
+  max-width: 100%;
+  overflow: hidden;
+  /* Hide scrollbar */
   padding-bottom: 20px;
-  /* Space for scrollbar */
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  /* Smooth scrolling on iOS */
+  -webkit-mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
+  mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
 }
 
-/* Custom Scrollbar for Certifications */
-.cert-grid::-webkit-scrollbar {
-  height: 8px;
+.cert-track {
+  display: flex;
+  gap: 30px;
+  width: max-content;
+  animation: scroll 40s linear infinite;
 }
 
-.cert-grid::-webkit-scrollbar-track {
-  background: var(--light-bg);
-  border-radius: 4px;
+.cert-grid:hover .cert-track {
+  animation-play-state: paused;
 }
 
-.cert-grid::-webkit-scrollbar-thumb {
-  background: var(--accent);
-  border-radius: 4px;
-}
-
-.cert-grid::-webkit-scrollbar-thumb:hover {
-  background: #4db3a4;
+@keyframes scroll {
+  to {
+    transform: translateX(calc(-50% - 15px));
+    /* Move by half the width (since we just duplicated the content) plus half the gap */
+  }
 }
 
 .cert-card {
-  flex: 0 0 320px;
-  /* Fixed width for horizontal scroll items */
-  scroll-snap-align: start;
+  width: 320px;
+  /* Fixed width */
+  flex-shrink: 0;
 
   background-color: var(--light-bg);
   border-radius: 8px;

@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             if (targetId === '#') return;
-            
+
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
                 targetElement.scrollIntoView({
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Add animation to specific elements
     const animateElements = document.querySelectorAll('.section-title, .about-text, .project-card, .timeline-item');
-    
+
     // Add CSS class for animation dynamically to avoid cluttering CSS file if JS fails
     const style = document.createElement('style');
     style.innerHTML = `
@@ -76,6 +76,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     `;
     document.head.appendChild(style);
+
+    // Infinite Scroll Logic (Clone Items)
+    const certTrack = document.querySelector('.cert-track');
+    if (certTrack) {
+        const certCards = document.querySelectorAll('.cert-card');
+        certCards.forEach(card => {
+            const clone = card.cloneNode(true);
+            clone.setAttribute('aria-hidden', 'true'); // Hide from screen readers
+            certTrack.appendChild(clone);
+        });
+    }
 
     animateElements.forEach(el => {
         observer.observe(el);
