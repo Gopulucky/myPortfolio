@@ -7,7 +7,7 @@
     <title>Gopu Hardik - Resume</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -15,456 +15,407 @@
             box-sizing: border-box;
         }
 
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background-color: #f5f5f5;
-            padding: 20px 20px;
-            line-height: 1.4;
-            color: #2d3748;
+        @page {
+            size: A4;
+            margin: 0.4in 0.5in;
         }
 
-        .resume-container {
+        :root {
+            --bg-color: #ffffff;
+            --text-main: #000000;
+            --text-secondary: #6e6e80;
+            --border-color: #e5e5e5;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 10pt;
+            line-height: 1.4;
+            color: var(--text-main);
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .resume {
             max-width: 850px;
             margin: 0 auto;
-            background: white;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 35px 45px;
+            background: var(--bg-color);
+            padding: 35px 40px;
+            border: 1px solid var(--border-color);
         }
 
-        /* Header */
+        /* Header - Minimalist like portfolio */
         .header {
-            border-bottom: 2px solid #2d3748;
-            padding-bottom: 12px;
-            margin-bottom: 20px;
-        }
-
-        .name {
-            font-size: 28px;
-            font-weight: 700;
-            color: #1a202c;
-            margin-bottom: 4px;
-            letter-spacing: -0.5px;
-        }
-
-        .title {
-            font-size: 15px;
-            color: #4a5568;
-            font-weight: 500;
-            margin-bottom: 10px;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            font-size: 12px;
-            color: #4a5568;
-        }
-
-        .contact-info a {
-            color: #4a5568;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        .contact-info a:hover {
-            color: #2d3748;
-        }
-
-        /* Sections */
-        .section {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
             margin-bottom: 18px;
         }
 
-        .section-title {
-            font-size: 16px;
-            font-weight: 600;
-            color: #1a202c;
-            margin-bottom: 10px;
-            padding-bottom: 4px;
-            border-bottom: 1.5px solid #e2e8f0;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+        .name {
+            font-size: 32pt;
+            font-weight: 400;
+            letter-spacing: -0.04em;
+            color: var(--text-main);
+            line-height: 1;
+            margin-bottom: 8px;
         }
 
-        /* Summary */
-        .summary {
-            font-size: 13px;
-            color: #4a5568;
-            line-height: 1.5;
-        }
-
-        /* Experience & Education */
-        .timeline-item {
+        .title {
+            font-size: 12pt;
+            color: var(--text-main);
+            font-weight: 400;
+            letter-spacing: -0.02em;
             margin-bottom: 12px;
         }
 
-        .timeline-header {
+        .contact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 9pt;
+            color: var(--text-secondary);
+        }
+
+        .contact a {
+            color: var(--text-main);
+            text-decoration: none;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1px;
+        }
+
+        .contact a:hover {
+            border-color: var(--text-main);
+        }
+
+        /* Section - Clean lines like portfolio */
+        .section {
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 10pt;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            color: var(--text-main);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 6px;
+            margin-bottom: 10px;
+        }
+
+        /* Two Column */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        /* Items - Timeline style like portfolio */
+        .item {
+            margin-bottom: 10px;
+        }
+
+        .item-header {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
             margin-bottom: 3px;
         }
 
-        .timeline-title {
-            font-size: 14px;
-            font-weight: 600;
-            color: #1a202c;
-        }
-
-        .timeline-date {
-            font-size: 12px;
-            color: #718096;
+        .item-title {
             font-weight: 500;
+            font-size: 10.5pt;
+            letter-spacing: -0.02em;
         }
 
-        .timeline-company {
-            font-size: 12px;
-            color: #4a5568;
+        .item-date {
+            font-size: 9pt;
+            color: var(--text-secondary);
+        }
+
+        .item-org {
+            font-size: 9pt;
+            color: var(--text-secondary);
             margin-bottom: 4px;
-            font-style: italic;
         }
 
-        .timeline-description {
-            font-size: 12px;
-            color: #4a5568;
+        .item-desc {
+            font-size: 9.5pt;
+            color: var(--text-secondary);
             line-height: 1.5;
         }
 
-        /* Projects */
-        .project-item {
-            margin-bottom: 10px;
+        /* Skills - Pill style like portfolio */
+        .skills-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 8px;
         }
 
-        .project-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 2px;
+        .skill-label {
+            font-size: 9pt;
+            font-weight: 500;
+            margin-right: 8px;
+            color: var(--text-main);
+        }
+
+        .skill-tag {
+            font-size: 9pt;
+            border: 1px solid var(--border-color);
+            padding: 3px 10px;
+            border-radius: 100px;
+            color: var(--text-main);
+        }
+
+        /* Projects - Card style like portfolio */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            border-top: 1px solid var(--border-color);
+            border-left: 1px solid var(--border-color);
+        }
+
+        .project {
+            padding: 10px 12px;
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
         }
 
         .project-title {
-            font-size: 13px;
-            font-weight: 600;
-            color: #1a202c;
-        }
-
-        .project-link {
-            font-size: 11px;
-            color: #4a5568;
-            text-decoration: none;
+            font-weight: 500;
+            font-size: 10pt;
+            letter-spacing: -0.02em;
+            margin-bottom: 3px;
         }
 
         .project-tech {
-            font-size: 11px;
-            color: #718096;
-            margin-bottom: 3px;
-            font-style: italic;
+            font-size: 8pt;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
         }
 
-        .project-description {
-            font-size: 12px;
-            color: #4a5568;
+        .project-desc {
+            font-size: 8.5pt;
+            color: var(--text-secondary);
             line-height: 1.4;
         }
 
-        /* Skills */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
+        .live-link {
+            font-size: 8pt;
+            color: var(--text-main);
+            border-bottom: 1px solid var(--border-color);
         }
 
-        .skill-category {
-            margin-bottom: 10px;
+        /* Certifications - Clean list */
+        .certs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
         }
 
-        .skill-category-title {
-            font-size: 14px;
-            font-weight: 600;
-            color: #2d3748;
-            margin-bottom: 5px;
-        }
-
-        .skill-items {
-            font-size: 13px;
-            color: #4a5568;
-            line-height: 1.6;
-        }
-
-        /* Certifications */
-        .cert-item {
-            margin-bottom: 6px;
+        .cert {
+            font-size: 9pt;
+            border: 1px solid var(--border-color);
+            padding: 4px 12px;
+            border-radius: 100px;
         }
 
         .cert-title {
-            font-size: 12px;
             font-weight: 500;
-            color: #1a202c;
+            color: var(--text-main);
         }
 
         .cert-issuer {
-            font-size: 11px;
-            color: #718096;
+            color: var(--text-secondary);
+            font-size: 8pt;
         }
 
-        /* Print Styles */
+        /* Summary - Clean box */
+        .summary {
+            font-size: 10pt;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .summary strong {
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        /* Print */
         @media print {
             body {
                 background: white;
                 padding: 0;
             }
 
-            .resume-container {
-                box-shadow: none;
-                padding: 30px 40px;
-                max-width: 100%;
+            .resume {
+                border: none;
+                padding: 0;
             }
 
             .no-print {
-                display: none;
-            }
-
-            .section {
-                page-break-inside: avoid;
-            }
-
-            @page {
-                margin: 0.5in;
+                display: none !important;
             }
         }
 
-        /* Print Button */
-        .print-button {
+        /* Button - Pill style like portfolio */
+        .print-btn {
             position: fixed;
-            top: 20px;
-            right: 20px;
+            top: 15px;
+            right: 15px;
             padding: 12px 24px;
-            background-color: #2d3748;
+            background: var(--text-main);
             color: white;
             border: none;
-            border-radius: 6px;
-            font-size: 14px;
-            font-weight: 500;
             cursor: pointer;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: all 0.2s;
+            font-size: 13px;
+            font-weight: 500;
+            border-radius: 100px;
             font-family: 'Inter', sans-serif;
+            transition: all 0.2s;
         }
 
-        .print-button:hover {
-            background-color: #1a202c;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-        }
-
-        @media (max-width: 768px) {
-            .resume-container {
-                padding: 30px 25px;
-            }
-
-            .name {
-                font-size: 28px;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .timeline-header,
-            .project-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .timeline-date,
-            .project-link {
-                margin-top: 2px;
-            }
+        .print-btn:hover {
+            background: #333;
         }
     </style>
 </head>
 
 <body>
-    <button class="print-button no-print" onclick="window.print()">📄 Download PDF</button>
+    <button class="print-btn no-print" onclick="window.print()">Download PDF</button>
 
-    <div class="resume-container">
+    <div class="resume">
         <!-- Header -->
         <div class="header">
-            <h1 class="name">Gopu Hardik</h1>
-            <p class="title">Software Engineer & AI Specialist</p>
-            <div class="contact-info">
-                <span>📧 gopuhardik@gmail.com</span>
-                <span>|</span>
-                <a href="https://github.com/Gopulucky" target="_blank">🔗 github.com/Gopulucky</a>
-                <span>|</span>
-                <a href="https://www.linkedin.com/in/gopu-hardik-842aa530b/" target="_blank">💼 LinkedIn</a>
-                <span>|</span>
-                <a href="https://gopuhardikportfolio.vercel.app/" target="_blank">🌐 Portfolio</a>
+            <div class="name">Gopu Hardik</div>
+            <div class="title">Software Engineer & AI Specialist</div>
+            <div class="contact">
+                <span>gopuhardik@gmail.com</span>
+                <a href="https://github.com/Gopulucky">github.com/Gopulucky</a>
+                <a href="https://linkedin.com/in/gopu-hardik-842aa530b">LinkedIn</a>
+                <a href="https://gopuhardikportfolio.vercel.app">gopuhardikportfolio.vercel.app</a>
             </div>
         </div>
 
         <!-- Summary -->
         <div class="section">
-            <h2 class="section-title">Professional Summary</h2>
-            <p class="summary">
-                Computer Science student with hands-on experience building 6+ production-ready applications including
-                desktop apps
-                (PySide6, Tkinter), full-stack web platforms (React, Node.js, PHP), and data analytics dashboards
-                (Plotly, pandas).
-                Specialized in secure, scalable solutions with expertise in database design, encryption, and cloud
-                deployment.
-            </p>
-        </div>
-        <!-- Education -->
-        <div class="section">
-            <h2 class="section-title">Education</h2>
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <h3 class="timeline-title">Bachelor of Technology (B.Tech) in Computer Science & Engineering</h3>
-                    <span class="timeline-date">2024 - 2028</span>
-                </div>
-                <p class="timeline-description">
-                    Pursuing specialized studies in Data Science, Artificial Intelligence, and Full Stack Development.
-                    Actively building real-world projects including desktop applications, web platforms, and data
-                    analytics dashboards.
-                </p>
+            <div class="summary">
+                Computer Science student with expertise building <strong>6+ production applications</strong>: desktop
+                solutions (PySide6, Tkinter),
+                full-stack platforms (React, Node.js, PHP), and analytics dashboards (Plotly, pandas). Specialized in
+                secure systems with
+                encryption, database design, and cloud deployment.
             </div>
         </div>
 
-        <!-- Experience -->
-        <div class="section">
-            <h2 class="section-title">Experience</h2>
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <h3 class="timeline-title">Software Developer</h3>
-                    <span class="timeline-date">2024 - Present</span>
+        <!-- Education & Experience -->
+        <div class="two-col">
+            <div class="section">
+                <div class="section-title">Education</div>
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-title">B.Tech Computer Science & Engineering</div>
+                        <div class="item-date">2024 — 2028</div>
+                    </div>
+                    <div class="item-desc">Specializing in AI, Data Science, and Full Stack Development. Building
+                        production applications and analytics platforms.</div>
                 </div>
-                <p class="timeline-company">Freelance & Personal Projects</p>
-                <p class="timeline-description">
-                    Developed 6+ production-ready applications across multiple domains: desktop apps (PySide6, Tkinter),
-                    full-stack web applications (React, Node.js, PHP), and data visualization platforms (Plotly,
-                    pandas).
-                    Built secure systems with encryption, real-time databases, and deployed live solutions serving real
-                    users.
-                </p>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Experience</div>
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-title">Software Developer</div>
+                        <div class="item-date">2024 — Present</div>
+                    </div>
+                    <div class="item-org">Freelance & Personal Projects</div>
+                    <div class="item-desc">Built 6+ applications across desktop, web, and analytics domains. Deployed
+                        live solutions with encryption and real-time databases.</div>
+                </div>
             </div>
         </div>
 
         <!-- Technical Skills -->
         <div class="section">
-            <h2 class="section-title">Technical Skills</h2>
-            <p class="skill-items" style="font-size: 14px; color: #4a5568; line-height: 1.8;">
-                <strong>Languages:</strong> Java, Python, JavaScript (ES6+), PHP, SQL<br>
-                <strong>Web Technologies:</strong> React, Node.js, HTML5, CSS3, TailwindCSS, Vite<br>
-                <strong>Desktop Development:</strong> PySide6, Tkinter<br>
-                <strong>Data & Analytics:</strong> pandas, Plotly, Machine Learning, Data Visualization<br>
-                <strong>Databases:</strong> MySQL, SQLite, NoSQL<br>
-                <strong>Tools & Cloud:</strong> Git, AWS, Vercel, AES Encryption
-            </p>
+            <div class="section-title">Technical Skills</div>
+            <div class="skills-row">
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">PHP</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">React</span>
+                <span class="skill-tag">Node.js</span>
+                <span class="skill-tag">TailwindCSS</span>
+                <span class="skill-tag">PySide6</span>
+                <span class="skill-tag">Tkinter</span>
+                <span class="skill-tag">pandas</span>
+                <span class="skill-tag">Plotly</span>
+                <span class="skill-tag">MySQL</span>
+                <span class="skill-tag">SQLite</span>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">AWS</span>
+                <span class="skill-tag">Vercel</span>
+            </div>
         </div>
+
         <!-- Projects -->
         <div class="section">
-            <h2 class="section-title">Key Projects</h2>
-
-            <div class="project-item">
-                <div class="project-header">
-                    <h3 class="project-title">Professional Manager</h3>
-                    <a href="https://github.com/Gopulucky/ProjectManager" class="project-link">GitHub →</a>
+            <div class="section-title">Selected Work</div>
+            <div class="projects-grid">
+                <div class="project">
+                    <div class="project-title">Professional Manager</div>
+                    <div class="project-tech">Python • PySide6 • SQLite • pandas</div>
+                    <div class="project-desc">Desktop app for Works Tracker and Land Compensation with financial
+                        tracking and Excel export.</div>
                 </div>
-                <p class="project-tech">Python • PySide6 • SQLite • pandas</p>
-                <p class="project-description">
-                    Desktop application for managing Works Tracker and Land Compensation Records with financial
-                    tracking,
-                    payment monitoring, bulk operations, and Excel export capabilities.
-                </p>
-            </div>
-
-            <div class="project-item">
-                <div class="project-header">
-                    <h3 class="project-title">SenaLabs Website</h3>
-                    <a href="https://github.com/Gopulucky/senalabs" class="project-link">GitHub →</a>
+                <div class="project">
+                    <div class="project-title">College Management System</div>
+                    <div class="project-tech">PHP • MySQL • JavaScript • <a href="https://acumenjuniorcollege.in"
+                            class="live-link">Live ↗</a></div>
+                    <div class="project-desc">Production platform managing student records with secure authentication.
+                    </div>
                 </div>
-                <p class="project-tech">React • Node.js • Express • TailwindCSS</p>
-                <p class="project-description">
-                    Full-stack modern web application featuring services showcase, pricing plans, team profiles, and
-                    contact
-                    forms with RESTful API architecture.
-                </p>
-            </div>
-
-            <div class="project-item">
-                <div class="project-header">
-                    <h3 class="project-title">Aadhaar Data Visualization</h3>
-                    <a href="https://github.com/Gopulucky/hackathon" class="project-link">GitHub →</a>
+                <div class="project">
+                    <div class="project-title">Aadhaar Data Visualization</div>
+                    <div class="project-tech">Python • Plotly • pandas • GeoJSON</div>
+                    <div class="project-desc">Analytics dashboard with interactive choropleth maps and hotspot
+                        detection.</div>
                 </div>
-                <p class="project-tech">Python • Plotly • pandas • GeoJSON</p>
-                <p class="project-description">
-                    Spatiotemporal analytics dashboard for India's Aadhaar enrollment data with interactive choropleth
-                    maps,
-                    temporal peak detection, and hotspot analysis.
-                </p>
-            </div>
-
-            <div class="project-item">
-                <div class="project-header">
-                    <h3 class="project-title">Secure Bank Manager</h3>
-                    <a href="https://github.com/Gopulucky/bank-details-" class="project-link">GitHub →</a>
+                <div class="project">
+                    <div class="project-title">Secure Bank Manager</div>
+                    <div class="project-tech">Python • Tkinter • SQLite • AES</div>
+                    <div class="project-desc">Desktop app with PBKDF2 hashing and AES encryption for sensitive data.
+                    </div>
                 </div>
-                <p class="project-tech">Python • Tkinter • SQLite • AES Encryption</p>
-                <p class="project-description">
-                    Offline desktop application for secure management of bank cards with PBKDF2 password hashing,
-                    AES encryption, and Excel import/export capabilities.
-                </p>
-            </div>
-
-            <div class="project-item">
-                <div class="project-header">
-                    <h3 class="project-title">College Management System</h3>
-                    <a href="https://acumenjuniorcollege.in/" class="project-link">Live Demo →</a>
+                <div class="project">
+                    <div class="project-title">SenaLabs Website</div>
+                    <div class="project-tech">React • Node.js • Express • TailwindCSS</div>
+                    <div class="project-desc">Full-stack web app with services, pricing, and RESTful API architecture.
+                    </div>
                 </div>
-                <p class="project-tech">PHP • MySQL • JavaScript</p>
-                <p class="project-description">
-                    Comprehensive platform for Acumen Junior College managing student records and academic data with
-                    secure authentication and real-time database updates. Currently deployed and serving real users.
-                </p>
-            </div>
-
-            <div class="project-item">
-                <div class="project-header">
-                    <h3 class="project-title">RTRP Application</h3>
-                    <a href="https://github.com/Gopulucky/RTRP" class="project-link">GitHub →</a>
+                <div class="project">
+                    <div class="project-title">RTRP Application</div>
+                    <div class="project-tech">React • React Router • TailwindCSS • Vite</div>
+                    <div class="project-desc">SPA with routing and optimized Vite build pipeline for production.</div>
                 </div>
-                <p class="project-tech">React • React Router • TailwindCSS • Vite</p>
-                <p class="project-description">
-                    Single-page React application with routing capabilities, modern responsive design, and optimized
-                    build pipeline for fast development and production builds.
-                </p>
             </div>
         </div>
 
         <!-- Certifications -->
         <div class="section">
-            <h2 class="section-title">Certifications</h2>
-            <div class="cert-item">
-                <div class="cert-title">Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate</div>
-                <div class="cert-issuer">Oracle University</div>
-            </div>
-            <div class="cert-item">
-                <div class="cert-title">Java Full Stack</div>
-                <div class="cert-issuer">EduSkills Academy</div>
-            </div>
-            <div class="cert-item">
-                <div class="cert-title">Must-have GenAI Skills for Developers</div>
-                <div class="cert-issuer">Coding Ninjas</div>
-            </div>
-            <div class="cert-item">
-                <div class="cert-title">AI Fluency for Students</div>
-                <div class="cert-issuer">Anthropic</div>
-            </div>
-            <div class="cert-item">
-                <div class="cert-title">Model Context Protocol: Advanced Topics</div>
-                <div class="cert-issuer">Anthropic</div>
+            <div class="section-title">Certifications</div>
+            <div class="certs">
+                <div class="cert"><span class="cert-title">Oracle Cloud AI Foundations 2025</span></div>
+                <div class="cert"><span class="cert-title">Java Full Stack</span></div>
+                <div class="cert"><span class="cert-title">GenAI Skills for Developers</span></div>
+                <div class="cert"><span class="cert-title">AI Fluency</span> <span class="cert-issuer">•
+                        Anthropic</span></div>
+                <div class="cert"><span class="cert-title">MCP Advanced Topics</span> <span class="cert-issuer">•
+                        Anthropic</span></div>
             </div>
         </div>
     </div>
