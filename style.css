@@ -4,13 +4,22 @@
 */
 
 :root {
+  /* Colors */
   --bg-color: #ffffff;
   --text-main: #000000;
   --text-secondary: #6e6e80;
-  /* OpenAI's subtle grey */
   --border-color: #e5e5e5;
-  /* Very subtle borders */
   --transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  /* Spacing Scale (8px base) */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 32px;
+  --space-xl: 48px;
+  --space-2xl: 64px;
+  --space-3xl: 80px;
+  --space-4xl: 120px;
 }
 
 /* Reset & Basics */
@@ -607,6 +616,7 @@ footer {
 /* TABLETS (max-width: 900px) */
 /* ==================== */
 @media (max-width: 900px) {
+
   /* Navigation */
   .hamburger {
     display: flex;
@@ -718,183 +728,253 @@ footer {
 
 /* ==================== */
 /* MOBILE (max-width: 600px) */
+/* Structured Spacing System */
 /* ==================== */
 @media (max-width: 600px) {
+
+  /* Update spacing scale for mobile */
+  :root {
+    --space-xs: 8px;
+    --space-sm: 12px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-2xl: 48px;
+    --space-3xl: 56px;
+    --space-4xl: 72px;
+  }
+
   html {
     font-size: 15px;
   }
 
+  /* Container - consistent side padding */
   .container {
-    width: 90%;
+    width: 100%;
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
   }
 
+  /* Sections - consistent vertical rhythm */
   .section {
-    padding: 80px 0;
+    padding: var(--space-2xl) 0;
   }
 
   .section-title {
-    font-size: 24px;
-    margin-bottom: 40px;
+    font-size: 22px;
+    margin-bottom: var(--space-lg);
   }
 
-  /* Header */
+  /* ===== HEADER ===== */
   .header {
     height: 56px;
+    padding: 0 var(--space-md);
+  }
+
+  .nav-container {
+    width: 100%;
+    padding: 0;
   }
 
   .logo {
     font-size: 1.1rem;
   }
 
-  /* Hero */
+  /* ===== HERO SECTION ===== */
   .hero-section {
-    min-height: 80vh;
-    padding-top: 80px;
+    min-height: auto;
+    padding-top: calc(56px + var(--space-xl));
+    padding-bottom: var(--space-xl);
+  }
+
+  .hero-content {
+    max-width: 100%;
   }
 
   .hero-title {
-    font-size: clamp(32px, 12vw, 48px);
-    margin-bottom: 20px;
+    font-size: clamp(28px, 10vw, 40px);
+    margin-bottom: var(--space-sm);
+    line-height: 1.1;
   }
 
   .hero-subtitle {
-    font-size: 18px;
-    margin-bottom: 24px;
+    font-size: 16px;
+    margin-bottom: var(--space-md);
+    line-height: 1.4;
   }
 
   .hero-description {
-    font-size: 16px;
-    line-height: 1.7;
-    margin-bottom: 28px;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: var(--space-lg);
   }
 
   .hero-btns {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
+    align-items: stretch;
+    gap: var(--space-sm);
+    width: 100%;
   }
 
   .btn {
-    padding: 12px 20px;
+    padding: var(--space-sm) var(--space-md);
     font-size: 14px;
     width: 100%;
     justify-content: center;
   }
 
-  /* About */
+  /* ===== ABOUT SECTION ===== */
+  .about-grid {
+    gap: var(--space-lg);
+  }
+
   .about-text p {
-    font-size: 16px;
+    font-size: 15px;
+    margin-bottom: var(--space-md);
+    line-height: 1.6;
+  }
+
+  .about-text p:last-of-type {
+    margin-bottom: var(--space-lg);
   }
 
   .tech-list {
-    gap: 8px;
-    margin-top: 24px;
+    gap: var(--space-xs);
+    margin-top: 0;
   }
 
   .tech-list li {
-    font-size: 13px;
+    font-size: 12px;
     padding: 6px 12px;
   }
 
-  .visual-box {
-    height: 200px;
+  .about-visual {
+    display: none;
   }
 
-  .visual-box i {
-    font-size: 2rem;
+  /* ===== EXPERIENCE/TIMELINE ===== */
+  .timeline {
+    margin-left: 0;
+    border-left: 2px solid var(--border-color);
+    padding-left: var(--space-md);
   }
 
-  /* Projects */
+  .timeline-item {
+    padding-left: 0;
+    padding-bottom: var(--space-lg);
+    position: relative;
+  }
+
+  .timeline-item::before {
+    left: calc(-1 * var(--space-md) - 5px);
+    width: 8px;
+    height: 8px;
+    top: 4px;
+  }
+
+  .timeline-item:last-child {
+    padding-bottom: 0;
+  }
+
+  .timeline-date {
+    font-size: 12px;
+    margin-bottom: var(--space-xs);
+  }
+
+  .timeline-content h3 {
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+
+  .timeline-content p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-top: var(--space-xs);
+  }
+
+  .company {
+    font-size: 13px;
+    margin-bottom: var(--space-xs);
+  }
+
+  /* ===== CERTIFICATIONS ===== */
+  .cert-grid {
+    padding: var(--space-md) 0;
+  }
+
+  .cert-card {
+    width: 200px;
+    padding: 0 var(--space-sm);
+  }
+
+  .cert-img-wrapper {
+    height: 100px;
+    margin-bottom: var(--space-sm);
+  }
+
+  .cert-content h3 {
+    font-size: 13px;
+    margin-bottom: 4px;
+  }
+
+  .cert-content .issuer {
+    font-size: 11px;
+    margin-bottom: var(--space-xs);
+  }
+
+  .cert-link {
+    font-size: 11px;
+  }
+
+  /* ===== PROJECTS/WORK ===== */
+  .projects-grid {
+    border: none;
+    gap: var(--space-md);
+  }
+
   .project-card {
-    padding: 24px;
+    padding: var(--space-md);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
   }
 
   .project-header {
-    margin-bottom: 24px;
+    margin-bottom: var(--space-md);
   }
 
   .project-title {
-    font-size: 20px;
+    font-size: 18px;
+    margin-bottom: var(--space-xs);
   }
 
   .project-desc {
-    font-size: 15px;
-    margin-bottom: 20px;
+    font-size: 14px;
+    margin-bottom: var(--space-md);
+    line-height: 1.5;
+  }
+
+  .project-tech {
+    gap: var(--space-xs);
   }
 
   .project-tech li {
     font-size: 11px;
-    margin-right: 8px;
+    margin-right: var(--space-xs);
   }
 
   .more-projects {
-    margin-top: 40px;
+    margin-top: var(--space-lg);
   }
 
-  /* Timeline */
-  .timeline {
-    margin-left: 5px;
+  /* ===== CONTACT ===== */
+  .contact-section {
+    text-align: center;
   }
 
-  .timeline-item {
-    padding-left: 24px;
-    padding-bottom: 32px;
-  }
-
-  .timeline-item::before {
-    left: -4px;
-    width: 7px;
-    height: 7px;
-  }
-
-  .timeline-date {
-    font-size: 13px;
-  }
-
-  .timeline-content h3 {
-    font-size: 18px;
-  }
-
-  .timeline-content p {
-    font-size: 15px;
-  }
-
-  .company {
-    font-size: 14px;
-  }
-
-  /* Certifications */
-  .cert-grid {
-    padding: 24px 0;
-  }
-
-  .cert-card {
-    width: 220px;
-    padding: 0 16px;
-  }
-
-  .cert-img-wrapper {
-    height: 120px;
-    margin-bottom: 16px;
-  }
-
-  .cert-content h3 {
-    font-size: 14px;
-  }
-
-  .cert-content .issuer {
-    font-size: 12px;
-    margin-bottom: 12px;
-  }
-
-  .cert-link {
-    font-size: 12px;
-  }
-
-  /* Contact */
   .contact-subtitle {
-    font-size: 20px;
-    margin-bottom: 28px;
+    font-size: 16px;
+    margin-bottom: var(--space-lg);
+    line-height: 1.5;
   }
 
   .big-btn {
@@ -902,68 +982,102 @@ footer {
   }
 
   .social-links-footer {
-    gap: 20px;
-    margin-top: 32px;
+    justify-content: center;
+    gap: var(--space-lg);
+    margin-top: var(--space-lg);
   }
 
   .social-links-footer a {
     font-size: 20px;
   }
 
-  /* Footer */
+  /* ===== FOOTER ===== */
   footer {
-    padding: 32px 5%;
-    font-size: 13px;
+    padding: var(--space-lg) var(--space-md);
+    text-align: center;
+    font-size: 12px;
   }
 }
 
 /* ==================== */
 /* SMALL MOBILE (max-width: 400px) */
+/* Tighter spacing for very small screens */
 /* ==================== */
 @media (max-width: 400px) {
+  :root {
+    --space-xs: 6px;
+    --space-sm: 10px;
+    --space-md: 14px;
+    --space-lg: 20px;
+    --space-xl: 28px;
+    --space-2xl: 40px;
+  }
+
   html {
     font-size: 14px;
   }
 
   .container {
-    width: 92%;
+    padding-left: var(--space-sm);
+    padding-right: var(--space-sm);
   }
 
   .section {
-    padding: 60px 0;
+    padding: var(--space-2xl) 0;
+  }
+
+  .section-title {
+    font-size: 20px;
+    margin-bottom: var(--space-lg);
   }
 
   .hero-title {
-    font-size: 28px;
+    font-size: 26px;
   }
 
   .hero-subtitle {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .hero-description {
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .nav-links a {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .cert-card {
-    width: 200px;
-    padding: 0 12px;
+    width: 180px;
+    padding: 0 var(--space-sm);
   }
 
   .cert-img-wrapper {
-    height: 100px;
+    height: 90px;
   }
 
   .project-card {
-    padding: 20px;
+    padding: var(--space-md);
   }
 
-  .timeline-item {
-    padding-left: 20px;
+  .project-title {
+    font-size: 16px;
+  }
+
+  .project-desc {
+    font-size: 13px;
+  }
+
+  .timeline-content h3 {
+    font-size: 15px;
+  }
+
+  .timeline-content p {
+    font-size: 13px;
+  }
+
+  .contact-subtitle {
+    font-size: 14px;
   }
 }
 
