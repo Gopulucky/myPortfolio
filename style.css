@@ -800,40 +800,80 @@ footer {
 
   /* ===== HERO ===== */
   .hero-section {
-    min-height: auto;
-    padding-top: 100px;
-    padding-bottom: 60px;
+    min-height: 100vh;
+    /* Fallback */
+    min-height: 100dvh;
+    /* Dynamic viewport height */
+    padding-top: 70px;
+    /* Slightly reduced top padding */
+    padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Vertically center content */
   }
 
   .hero-content {
     max-width: 100%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
   }
 
   .hero-title {
-    font-size: 36px;
-    margin-bottom: 16px;
+    font-size: 40px;
+    /* Increased for impact */
+    line-height: 1.1;
+    margin-bottom: 8px;
+    /* Tighter spacing */
+    letter-spacing: -0.03em;
+    font-weight: 600;
+    /* slightly bolder for name */
   }
 
   .hero-subtitle {
     font-size: 18px;
+    /* Slightly larger */
     margin-bottom: 20px;
+    line-height: 1.3;
+    color: var(--text-secondary);
+    /* Use secondary color for clear hierarchy */
+    font-weight: 400;
   }
 
   .hero-description {
     font-size: 15px;
+    line-height: 1.6;
     margin-bottom: 32px;
+    max-width: 95%;
+    /* Prevent edge-to-edge text stretch */
+    color: var(--text-secondary);
   }
 
   .hero-btns {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
     gap: 12px;
+    width: 100%;
+    margin-bottom: 20px;
   }
 
   .btn {
-    padding: 14px 24px;
+    padding: 12px 24px;
     font-size: 14px;
-    width: 100%;
+    width: auto;
+    flex: 0 1 auto;
+    min-width: fit-content;
+    text-align: center;
     justify-content: center;
+    border-radius: 100px;
+  }
+
+  .btn i {
+    margin-right: 8px;
   }
 
   /* ===== ABOUT ===== */
