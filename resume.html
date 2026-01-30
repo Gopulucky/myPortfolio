@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gopu Hardik - Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #f5f5f5;
+            padding: 40px 20px;
+            line-height: 1.6;
+            color: #2d3748;
+        }
+
+        .resume-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 50px 60px;
+        }
+
+        /* Header */
+        .header {
+            border-bottom: 2px solid #2d3748;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .name {
+            font-size: 36px;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .title {
+            font-size: 18px;
+            color: #4a5568;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 14px;
+            color: #4a5568;
+        }
+
+        .contact-info a {
+            color: #4a5568;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .contact-info a:hover {
+            color: #2d3748;
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 1.5px solid #e2e8f0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Summary */
+        .summary {
+            font-size: 15px;
+            color: #4a5568;
+            line-height: 1.7;
+        }
+
+        /* Experience & Education */
+        .timeline-item {
+            margin-bottom: 20px;
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+
+        .timeline-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a202c;
+        }
+
+        .timeline-date {
+            font-size: 13px;
+            color: #718096;
+            font-weight: 500;
+        }
+
+        .timeline-company {
+            font-size: 14px;
+            color: #4a5568;
+            margin-bottom: 8px;
+            font-style: italic;
+        }
+
+        .timeline-description {
+            font-size: 14px;
+            color: #4a5568;
+            line-height: 1.6;
+        }
+
+        /* Projects */
+        .project-item {
+            margin-bottom: 18px;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+
+        .project-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #1a202c;
+        }
+
+        .project-link {
+            font-size: 12px;
+            color: #4a5568;
+            text-decoration: none;
+        }
+
+        .project-tech {
+            font-size: 13px;
+            color: #718096;
+            margin-bottom: 5px;
+            font-style: italic;
+        }
+
+        .project-description {
+            font-size: 13px;
+            color: #4a5568;
+            line-height: 1.6;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .skill-category {
+            margin-bottom: 10px;
+        }
+
+        .skill-category-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 5px;
+        }
+
+        .skill-items {
+            font-size: 13px;
+            color: #4a5568;
+            line-height: 1.6;
+        }
+
+        /* Certifications */
+        .cert-item {
+            margin-bottom: 10px;
+        }
+
+        .cert-title {
+            font-size: 14px;
+            font-weight: 500;
+            color: #1a202c;
+        }
+
+        .cert-issuer {
+            font-size: 13px;
+            color: #718096;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .resume-container {
+                box-shadow: none;
+                padding: 40px;
+                max-width: 100%;
+            }
+
+            .no-print {
+                display: none;
+            }
+
+            .section {
+                page-break-inside: avoid;
+            }
+        }
+
+        /* Print Button */
+        .print-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 12px 24px;
+            background-color: #2d3748;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .print-button:hover {
+            background-color: #1a202c;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        @media (max-width: 768px) {
+            .resume-container {
+                padding: 30px 25px;
+            }
+
+            .name {
+                font-size: 28px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-header,
+            .project-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .timeline-date,
+            .project-link {
+                margin-top: 2px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <button class="print-button no-print" onclick="window.print()">📄 Download PDF</button>
+
+    <div class="resume-container">
+        <!-- Header -->
+        <div class="header">
+            <h1 class="name">Gopu Hardik</h1>
+            <p class="title">Software Engineer & AI Specialist</p>
+            <div class="contact-info">
+                <span>📧 gopuhardik@gmail.com</span>
+                <span>|</span>
+                <a href="https://github.com/Gopulucky" target="_blank">🔗 github.com/Gopulucky</a>
+                <span>|</span>
+                <a href="https://www.linkedin.com/in/gopu-hardik-842aa530b/" target="_blank">💼 LinkedIn</a>
+                <span>|</span>
+                <a href="https://gopuhardikportfolio.vercel.app/" target="_blank">🌐 Portfolio</a>
+            </div>
+        </div>
+
+        <!-- Summary -->
+        <div class="section">
+            <h2 class="section-title">Professional Summary</h2>
+            <p class="summary">
+                Dedicated Computer Science student with hands-on experience in full-stack development, desktop
+                applications,
+                and data analytics. Proven track record of building 6+ production-ready applications using modern
+                technologies
+                including React, Python, Node.js, and advanced data visualization tools. Specialized in creating secure,
+                scalable solutions with expertise in database design, encryption, and cloud deployment.
+            </p>
+        </div>
+
+        <!-- Education -->
+        <div class="section">
+            <h2 class="section-title">Education</h2>
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <h3 class="timeline-title">Bachelor of Technology (B.Tech) in Computer Science & Engineering</h3>
+                    <span class="timeline-date">2024 - 2028</span>
+                </div>
+                <p class="timeline-description">
+                    Pursuing specialized studies in Data Science, Artificial Intelligence, and Full Stack Development.
+                    Actively building real-world projects including desktop applications, web platforms, and data
+                    analytics dashboards.
+                </p>
+            </div>
+        </div>
+
+        <!-- Experience -->
+        <div class="section">
+            <h2 class="section-title">Experience</h2>
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <h3 class="timeline-title">Software Developer</h3>
+                    <span class="timeline-date">2024 - Present</span>
+                </div>
+                <p class="timeline-company">Freelance & Personal Projects</p>
+                <p class="timeline-description">
+                    Developed 6+ production-ready applications across multiple domains: desktop apps (PySide6, Tkinter),
+                    full-stack web applications (React, Node.js, PHP), and data visualization platforms (Plotly,
+                    pandas).
+                    Built secure systems with encryption, real-time databases, and deployed live solutions serving real
+                    users.
+                </p>
+            </div>
+        </div>
+
+        <!-- Technical Skills -->
+        <div class="section">
+            <h2 class="section-title">Technical Skills</h2>
+            <p class="skill-items" style="font-size: 14px; color: #4a5568; line-height: 1.8;">
+                <strong>Languages:</strong> Java, Python, JavaScript (ES6+), PHP, SQL<br>
+                <strong>Web Technologies:</strong> React, Node.js, HTML5, CSS3, TailwindCSS, Vite<br>
+                <strong>Desktop Development:</strong> PySide6, Tkinter<br>
+                <strong>Data & Analytics:</strong> pandas, Plotly, Machine Learning, Data Visualization<br>
+                <strong>Databases:</strong> MySQL, SQLite, NoSQL<br>
+                <strong>Tools & Cloud:</strong> Git, AWS, Vercel, AES Encryption
+            </p>
+        </div>
+        <!-- Projects -->
+        <div class="section">
+            <h2 class="section-title">Key Projects</h2>
+
+            <div class="project-item">
+                <div class="project-header">
+                    <h3 class="project-title">Professional Manager</h3>
+                    <a href="https://github.com/Gopulucky/ProjectManager" class="project-link">GitHub →</a>
+                </div>
+                <p class="project-tech">Python • PySide6 • SQLite • pandas</p>
+                <p class="project-description">
+                    Desktop application for managing Works Tracker and Land Compensation Records with financial
+                    tracking,
+                    payment monitoring, bulk operations, and Excel export capabilities.
+                </p>
+            </div>
+
+            <div class="project-item">
+                <div class="project-header">
+                    <h3 class="project-title">SenaLabs Website</h3>
+                    <a href="https://github.com/Gopulucky/senalabs" class="project-link">GitHub →</a>
+                </div>
+                <p class="project-tech">React • Node.js • Express • TailwindCSS</p>
+                <p class="project-description">
+                    Full-stack modern web application featuring services showcase, pricing plans, team profiles, and
+                    contact
+                    forms with RESTful API architecture.
+                </p>
+            </div>
+
+            <div class="project-item">
+                <div class="project-header">
+                    <h3 class="project-title">Aadhaar Data Visualization</h3>
+                    <a href="https://github.com/Gopulucky/hackathon" class="project-link">GitHub →</a>
+                </div>
+                <p class="project-tech">Python • Plotly • pandas • GeoJSON</p>
+                <p class="project-description">
+                    Spatiotemporal analytics dashboard for India's Aadhaar enrollment data with interactive choropleth
+                    maps,
+                    temporal peak detection, and hotspot analysis.
+                </p>
+            </div>
+
+            <div class="project-item">
+                <div class="project-header">
+                    <h3 class="project-title">Secure Bank Manager</h3>
+                    <a href="https://github.com/Gopulucky/bank-details-" class="project-link">GitHub →</a>
+                </div>
+                <p class="project-tech">Python • Tkinter • SQLite • AES Encryption</p>
+                <p class="project-description">
+                    Offline desktop application for secure management of bank cards with PBKDF2 password hashing,
+                    AES encryption, and Excel import/export capabilities.
+                </p>
+            </div>
+
+            <div class="project-item">
+                <div class="project-header">
+                    <h3 class="project-title">College Management System</h3>
+                    <a href="https://acumenjuniorcollege.in/" class="project-link">Live Demo →</a>
+                </div>
+                <p class="project-tech">PHP • MySQL • JavaScript</p>
+                <p class="project-description">
+                    Comprehensive platform for Acumen Junior College managing student records and academic data with
+                    secure authentication and real-time database updates. Currently deployed and serving real users.
+                </p>
+            </div>
+
+            <div class="project-item">
+                <div class="project-header">
+                    <h3 class="project-title">RTRP Application</h3>
+                    <a href="https://github.com/Gopulucky/RTRP" class="project-link">GitHub →</a>
+                </div>
+                <p class="project-tech">React • React Router • TailwindCSS • Vite</p>
+                <p class="project-description">
+                    Single-page React application with routing capabilities, modern responsive design, and optimized
+                    build pipeline for fast development and production builds.
+                </p>
+            </div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="section">
+            <h2 class="section-title">Certifications</h2>
+            <div class="cert-item">
+                <div class="cert-title">Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate</div>
+                <div class="cert-issuer">Oracle University</div>
+            </div>
+            <div class="cert-item">
+                <div class="cert-title">Java Full Stack</div>
+                <div class="cert-issuer">EduSkills Academy</div>
+            </div>
+            <div class="cert-item">
+                <div class="cert-title">Must-have GenAI Skills for Developers</div>
+                <div class="cert-issuer">Coding Ninjas</div>
+            </div>
+            <div class="cert-item">
+                <div class="cert-title">AI Fluency for Students</div>
+                <div class="cert-issuer">Anthropic</div>
+            </div>
+            <div class="cert-item">
+                <div class="cert-title">Model Context Protocol: Advanced Topics</div>
+                <div class="cert-issuer">Anthropic</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
