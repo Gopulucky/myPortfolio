@@ -25,20 +25,7 @@ A modern, responsive, and high-performance portfolio website designed for a Soft
 -   **Font Awesome** (Icons)
 -   **Google Fonts** (Inter & Playfair Display)
 
-## How to Run
 
-1.  Clone the repository:
-    ```bash
-    git clone https://github.com/yourusername/portfolio.git
-    ```
-2.  Open `index.html` in your browser.
 
-## customization
 
-1.  Update `index.html` with your specific project details, links, and contact info.
-2.  Replace the placeholder text in the "Experience" section.
-3.  (Optional) Add your resume PDF to the root directory and link it in the "Contact" section.
 
-## License
-
-MIT License
