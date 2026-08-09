@@ -22,9 +22,12 @@
 
         :root {
             --bg-color: #ffffff;
-            --text-main: #000000;
-            --text-secondary: #6e6e80;
-            --border-color: #e5e5e5;
+            --page-color: #f3ede3;
+            --text-main: #211f1c;
+            --text-secondary: #6e6a63;
+            --border-color: #e8e0d5;
+            --accent: #c1602a;
+            --accent-secondary: #2f6f5e;
         }
 
         body {
@@ -32,7 +35,7 @@
             font-size: 10pt;
             line-height: 1.4;
             color: var(--text-main);
-            background: #f5f5f5;
+            background: var(--page-color);
             padding: 20px;
         }
 
@@ -44,9 +47,9 @@
             border: 1px solid var(--border-color);
         }
 
-        /* Header - Minimalist like portfolio */
+        /* Header */
         .header {
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 2px solid var(--accent);
             padding-bottom: 15px;
             margin-bottom: 18px;
         }
@@ -62,8 +65,8 @@
 
         .title {
             font-size: 12pt;
-            color: var(--text-main);
-            font-weight: 400;
+            color: var(--accent);
+            font-weight: 500;
             letter-spacing: -0.02em;
             margin-bottom: 12px;
         }
@@ -84,17 +87,17 @@
         }
 
         .contact a:hover {
-            border-color: var(--text-main);
+            border-color: var(--accent);
         }
 
-        /* Section - Clean lines like portfolio */
+        /* Section */
         .section {
             margin-bottom: 15px;
         }
 
         .section-title {
             font-size: 10pt;
-            font-weight: 400;
+            font-weight: 500;
             letter-spacing: -0.02em;
             color: var(--text-main);
             border-bottom: 1px solid var(--border-color);
@@ -109,7 +112,7 @@
             gap: 25px;
         }
 
-        /* Items - Timeline style like portfolio */
+        /* Items */
         .item {
             margin-bottom: 10px;
         }
@@ -129,7 +132,7 @@
 
         .item-date {
             font-size: 9pt;
-            color: var(--text-secondary);
+            color: var(--accent-secondary);
         }
 
         .item-org {
@@ -144,7 +147,7 @@
             line-height: 1.5;
         }
 
-        /* Skills - Pill style like portfolio */
+        /* Skills */
         .skills-row {
             display: flex;
             flex-wrap: wrap;
@@ -167,7 +170,7 @@
             color: var(--text-main);
         }
 
-        /* Projects - Card style like portfolio */
+        /* Projects */
         .projects-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -203,11 +206,11 @@
 
         .live-link {
             font-size: 8pt;
-            color: var(--text-main);
+            color: var(--accent);
             border-bottom: 1px solid var(--border-color);
         }
 
-        /* Certifications - Clean list */
+        /* Certifications */
         .certs {
             display: flex;
             flex-wrap: wrap;
@@ -231,7 +234,7 @@
             font-size: 8pt;
         }
 
-        /* Summary - Clean box */
+        /* Summary */
         .summary {
             font-size: 10pt;
             color: var(--text-secondary);
@@ -260,13 +263,13 @@
             }
         }
 
-        /* Button - Pill style like portfolio */
+        /* Button */
         .print-btn {
             position: fixed;
             top: 15px;
             right: 15px;
             padding: 12px 24px;
-            background: var(--text-main);
+            background: var(--accent);
             color: white;
             border: none;
             cursor: pointer;
@@ -278,7 +281,7 @@
         }
 
         .print-btn:hover {
-            background: #333;
+            background: #a34e20;
         }
     </style>
 </head>
@@ -295,18 +298,16 @@
                 <span>gopuhardik@gmail.com</span>
                 <a href="https://github.com/Gopulucky">github.com/Gopulucky</a>
                 <a href="https://linkedin.com/in/gopu-hardik-842aa530b">LinkedIn</a>
-                <a href="https://gopuhardikportfolio.vercel.app">gopuhardikportfolio.vercel.app</a>
             </div>
         </div>
 
         <!-- Summary -->
         <div class="section">
             <div class="summary">
-                Computer Science student with expertise building <strong>6+ production applications</strong>: desktop
-                solutions (PySide6, Tkinter),
-                full-stack platforms (React, Node.js, PHP), and analytics dashboards (Plotly, pandas). Specialized in
-                secure systems with
-                encryption, database design, and cloud deployment.
+                Computer Science student who ships <strong>full-stack platforms end-to-end</strong>: a Stripe-integrated
+                3D commerce marketplace with AI semantic search, a real-time time-banking app built during an
+                internship, and a geospatial ML pipeline built for a national hackathon. Comfortable across
+                React/Next.js frontends, Node/FastAPI backends, and SQL/NoSQL databases.
             </div>
         </div>
 
@@ -331,9 +332,10 @@
                         <div class="item-title">Software Developer</div>
                         <div class="item-date">2024 — Present</div>
                     </div>
-                    <div class="item-org">Freelance & Personal Projects</div>
-                    <div class="item-desc">Built 6+ applications across desktop, web, and analytics domains. Deployed
-                        live solutions with encryption and real-time databases.</div>
+                    <div class="item-org">Freelance, Internship & Personal Projects</div>
+                    <div class="item-desc">Shipped a 3D commerce marketplace, a time-banking platform (RTRP
+                        internship), and a geospatial ML pipeline for a national hackathon. Deployed live solutions
+                        on Postgres, MySQL, and MongoDB.</div>
                 </div>
             </div>
         </div>
@@ -342,22 +344,24 @@
         <div class="section">
             <div class="section-title">Technical Skills</div>
             <div class="skills-row">
-                <span class="skill-tag">Java</span>
                 <span class="skill-tag">Python</span>
+                <span class="skill-tag">TypeScript</span>
                 <span class="skill-tag">JavaScript</span>
-                <span class="skill-tag">PHP</span>
-                <span class="skill-tag">SQL</span>
                 <span class="skill-tag">React</span>
+                <span class="skill-tag">Next.js</span>
+                <span class="skill-tag">Three.js / R3F</span>
                 <span class="skill-tag">Node.js</span>
+                <span class="skill-tag">Express</span>
+                <span class="skill-tag">FastAPI</span>
                 <span class="skill-tag">TailwindCSS</span>
-                <span class="skill-tag">PySide6</span>
-                <span class="skill-tag">Tkinter</span>
-                <span class="skill-tag">pandas</span>
-                <span class="skill-tag">Plotly</span>
+                <span class="skill-tag">PostgreSQL</span>
                 <span class="skill-tag">MySQL</span>
-                <span class="skill-tag">SQLite</span>
+                <span class="skill-tag">MongoDB</span>
+                <span class="skill-tag">Redis</span>
+                <span class="skill-tag">Firebase</span>
+                <span class="skill-tag">scikit-learn</span>
+                <span class="skill-tag">Docker</span>
                 <span class="skill-tag">Git</span>
-                <span class="skill-tag">AWS</span>
                 <span class="skill-tag">Vercel</span>
             </div>
         </div>
@@ -367,40 +371,43 @@
             <div class="section-title">Selected Work</div>
             <div class="projects-grid">
                 <div class="project">
-                    <div class="project-title">Professional Manager</div>
-                    <div class="project-tech">Python • PySide6 • SQLite • pandas</div>
-                    <div class="project-desc">Desktop app for Works Tracker and Land Compensation with financial
-                        tracking and Excel export.</div>
+                    <div class="project-title">3DVerse</div>
+                    <div class="project-tech">Next.js • TypeScript • FastAPI • PostgreSQL • <a
+                            href="https://3dverse-tan.vercel.app" class="live-link">Live ↗</a></div>
+                    <div class="project-desc">3D commerce marketplace: creator/customer/print-partner roles, Stripe
+                        checkout, AI semantic search (pgvector).</div>
                 </div>
                 <div class="project">
-                    <div class="project-title">College Management System</div>
-                    <div class="project-tech">PHP • MySQL • JavaScript • <a href="https://acumenjuniorcollege.in"
+                    <div class="project-title">SkillSwap</div>
+                    <div class="project-tech">React • Node.js • Express • MySQL</div>
+                    <div class="project-desc">Time-banking platform built during the RTRP internship. JWT auth,
+                        real-time chat, skill marketplace.</div>
+                </div>
+                <div class="project">
+                    <div class="project-title">Geo-Intel AI Pipeline</div>
+                    <div class="project-tech">Python • scikit-learn • WhiteboxTools • GeoPandas</div>
+                    <div class="project-desc">National hackathon project: LiDAR → Digital Terrain Model, ML land-use
+                        classification, drainage design.</div>
+                </div>
+                <div class="project">
+                    <div class="project-title">WalkThru</div>
+                    <div class="project-tech">Three.js • COLMAP • OpenMVS • Node.js</div>
+                    <div class="project-desc">Real-estate prototype: own photos-to-3D pipeline plus a walkable
+                        physics viewer for property tours.</div>
+                </div>
+                <div class="project">
+                    <div class="project-title">CS Notes</div>
+                    <div class="project-tech">React • Monaco Editor • Express • MongoDB • <a
+                            href="https://createnotes-app.vercel.app" class="live-link">Live ↗</a></div>
+                    <div class="project-desc">Interactive CS learning app with a code editor, markdown notes, and
+                        progress tracking.</div>
+                </div>
+                <div class="project">
+                    <div class="project-title">SenA Labs</div>
+                    <div class="project-tech">React • Vite • TailwindCSS • <a href="https://senalabs.in"
                             class="live-link">Live ↗</a></div>
-                    <div class="project-desc">Production platform managing student records with secure authentication.
+                    <div class="project-desc">Live marketing site for a robotics/AI-workshops student organization.
                     </div>
-                </div>
-                <div class="project">
-                    <div class="project-title">Aadhaar Data Visualization</div>
-                    <div class="project-tech">Python • Plotly • pandas • GeoJSON</div>
-                    <div class="project-desc">Analytics dashboard with interactive choropleth maps and hotspot
-                        detection.</div>
-                </div>
-                <div class="project">
-                    <div class="project-title">Secure Bank Manager</div>
-                    <div class="project-tech">Python • Tkinter • SQLite • AES</div>
-                    <div class="project-desc">Desktop app with PBKDF2 hashing and AES encryption for sensitive data.
-                    </div>
-                </div>
-                <div class="project">
-                    <div class="project-title">SenaLabs Website</div>
-                    <div class="project-tech">React • Node.js • Express • TailwindCSS</div>
-                    <div class="project-desc">Full-stack web app with services, pricing, and RESTful API architecture.
-                    </div>
-                </div>
-                <div class="project">
-                    <div class="project-title">RTRP Application</div>
-                    <div class="project-tech">React • React Router • TailwindCSS • Vite</div>
-                    <div class="project-desc">SPA with routing and optimized Vite build pipeline for production.</div>
                 </div>
             </div>
         </div>

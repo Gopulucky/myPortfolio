@@ -1,0 +1,36 @@
+@import "tailwindcss";
+@import "@fontsource-variable/inter";
+
+@theme {
+  --color-ivory: #faf7f2;
+  --color-ivory-dim: #f3ede3;
+  --color-charcoal: #211f1c;
+  --color-charcoal-soft: #55504a;
+  --color-terracotta: #c1602a;
+  --color-terracotta-dark: #a34e20;
+  --color-moss: #2f6f5e;
+  --color-moss-dark: #24594b;
+
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background-color: var(--color-ivory);
+  color: var(--color-charcoal);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background-color: var(--color-terracotta);
+  color: var(--color-ivory);
+}
