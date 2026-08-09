@@ -103,7 +103,8 @@ export const projects = [
     title: "3DVerse",
     subtitle: "The Operating System for 3D Commerce",
     description:
-      "A full-stack marketplace connecting 3D creators, customers, and print partners, shipped across 9 completed phases. In-browser 3D model preview (Three.js/R3F), automated printability analysis, Stripe checkout, and an AI layer with pgvector semantic search and \"similar product\" recommendations.",
+      "A full-stack marketplace connecting 3D creators, customers, and print partners. In-browser 3D model preview (Three.js/R3F), automated printability analysis, Stripe checkout, and an AI layer with pgvector semantic search and \"similar product\" recommendations.",
+    highlight: "9 completed phases — auth → uploads → printability → payments → AI search",
     tech: ["Next.js", "TypeScript", "FastAPI", "PostgreSQL"],
     github: "https://github.com/Gopulucky/3Dverse",
     live: "https://3dverse-tan.vercel.app",
@@ -113,7 +114,8 @@ export const projects = [
     title: "SkillSwap",
     subtitle: "Trade Skills, Not Money",
     description:
-      "Full-stack time-banking platform built during the RTRP Internship Program: students trade hours of teaching for hours of learning instead of money. JWT + bcrypt auth, a searchable skill marketplace, real-time chat with optimistic UI, and a connection-pooled MySQL backend.",
+      "Full-stack time-banking platform built during the RTRP Internship Program: students trade hours of teaching for hours of learning instead of money. JWT + bcrypt auth, a searchable skill marketplace, and real-time chat with optimistic UI.",
+    highlight: "10-connection pooled MySQL backend, JWT sessions, bcrypt-hashed auth",
     tech: ["React", "Node.js", "Express", "MySQL"],
     github: "https://github.com/Gopulucky/RTRP",
   },
@@ -123,6 +125,7 @@ export const projects = [
     subtitle: "LULC & Hydrology Engine",
     description:
       "Built for the MoPR × IIT Tirupati NiF National Geospatial Intelligence Hackathon. Converts raw drone LiDAR point clouds into Digital Terrain Models, classifies land use with a Random Forest model, simulates rainwater flow, predicts waterlogging hotspots, and auto-designs drainage networks.",
+    highlight: "100-tree Random Forest classifying 4 land-use types, chunk-processed 1M points at a time",
     tech: ["Python", "scikit-learn", "WhiteboxTools", "GeoPandas"],
     github: "https://github.com/Gopulucky/Geo-Intel_DTM_pipeline",
   },
@@ -131,7 +134,8 @@ export const projects = [
     title: "WalkThru",
     subtitle: "Playable 3D Property Tours",
     description:
-      "A real-estate startup prototype: instead of scrolling photos, buyers walk a character through a real 3D-scanned property in the browser. Built an in-house photos-to-3D reconstruction pipeline (COLMAP + OpenMVS) and a Three.js viewer with capsule-vs-BVH physics, verified walkable against a real 1M-triangle photogrammetry scan.",
+      "A real-estate startup prototype: instead of scrolling photos, buyers walk a character through a real 3D-scanned property in the browser. Built an in-house photos-to-3D reconstruction pipeline (COLMAP + OpenMVS) and a Three.js viewer with capsule-vs-BVH physics.",
+    highlight: "140/140 photos registered at 0.331px error → 4.18M-point mesh, compressed 477MB → 385KB",
     tech: ["Three.js", "COLMAP", "OpenMVS", "Node.js"],
     github: "https://github.com/Gopulucky/startupidea",
   },

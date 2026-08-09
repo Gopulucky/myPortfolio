@@ -62,6 +62,10 @@ export default function ProjectCard({ project, reducedMotion }) {
       {project.subtitle && <p className="mt-0.5 text-sm font-medium text-terracotta">{project.subtitle}</p>}
       <p className="mt-2 flex-1 text-sm leading-relaxed text-charcoal-soft">{project.description}</p>
 
+      {project.highlight && (
+        <p className="mt-3 border-l-2 border-moss/50 pl-3 text-xs font-medium text-moss-dark">{project.highlight}</p>
+      )}
+
       <ul className="mt-4 flex flex-wrap gap-2">
         {project.tech.map((tech) => (
           <li key={tech} className="rounded-full bg-moss/10 px-3 py-1 text-xs font-medium text-moss-dark">
