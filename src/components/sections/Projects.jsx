@@ -11,7 +11,7 @@ export default function Projects({ reducedMotion }) {
         <SectionHeading
           eyebrow="Work"
           title="Selected projects"
-          description="A few things I've built and shipped — a 3D commerce marketplace, a real-time platform, an ML geospatial pipeline, and more. Every link below is real."
+          description="A few things I've built and shipped — a 3D commerce marketplace, a real-time platform, an ML geospatial pipeline, a drone-video-to-3D reconstruction system, and more. Every link below is real."
         />
 
         <motion.div

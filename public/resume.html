@@ -50,12 +50,12 @@
         /* Header */
         .header {
             border-bottom: 2px solid var(--accent);
-            padding-bottom: 15px;
-            margin-bottom: 18px;
+            padding-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .name {
-            font-size: 32pt;
+            font-size: 28pt;
             font-weight: 400;
             letter-spacing: -0.04em;
             color: var(--text-main);
@@ -92,7 +92,7 @@
 
         /* Section */
         .section {
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
         .section-title {
@@ -101,20 +101,20 @@
             letter-spacing: -0.02em;
             color: var(--text-main);
             border-bottom: 1px solid var(--border-color);
-            padding-bottom: 6px;
-            margin-bottom: 10px;
+            padding-bottom: 4px;
+            margin-bottom: 7px;
         }
 
         /* Two Column */
         .two-col {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 25px;
+            gap: 20px;
         }
 
         /* Items */
         .item {
-            margin-bottom: 10px;
+            margin-bottom: 6px;
         }
 
         .item-header {
@@ -144,15 +144,15 @@
         .item-desc {
             font-size: 9.5pt;
             color: var(--text-secondary);
-            line-height: 1.5;
+            line-height: 1.4;
         }
 
         /* Skills */
         .skills-row {
             display: flex;
             flex-wrap: wrap;
-            gap: 6px;
-            margin-bottom: 8px;
+            gap: 5px;
+            margin-bottom: 4px;
         }
 
         .skill-label {
@@ -180,7 +180,7 @@
         }
 
         .project {
-            padding: 10px 12px;
+            padding: 7px 10px;
             border-right: 1px solid var(--border-color);
             border-bottom: 1px solid var(--border-color);
         }
@@ -191,6 +191,11 @@
             letter-spacing: -0.02em;
             margin-bottom: 3px;
         }
+
+        .project:last-child:nth-child(odd) {
+            grid-column: 1 / -1;
+        }
+
 
         .project-tech {
             font-size: 8pt;
@@ -238,7 +243,7 @@
         .summary {
             font-size: 10pt;
             color: var(--text-secondary);
-            line-height: 1.5;
+            line-height: 1.4;
         }
 
         .summary strong {
@@ -305,9 +310,9 @@
         <div class="section">
             <div class="summary">
                 Computer Science student who ships <strong>full-stack platforms end-to-end</strong>: a Stripe-integrated
-                3D commerce marketplace with AI semantic search, a real-time time-banking app built during an
-                internship, and a geospatial ML pipeline built for a national hackathon. Comfortable across
-                React/Next.js frontends, Node/FastAPI backends, and SQL/NoSQL databases.
+                3D commerce marketplace with AI search, a time-banking app built during an internship, a
+                geospatial ML pipeline built for a national hackathon, and a drone-video-to-3D reconstruction
+                pipeline. Comfortable across React/Next.js, Node/FastAPI, and SQL/NoSQL databases.
             </div>
         </div>
 
@@ -334,8 +339,8 @@
                     </div>
                     <div class="item-org">Freelance, Internship & Personal Projects</div>
                     <div class="item-desc">Shipped a 3D commerce marketplace, a time-banking platform (RTRP
-                        internship), and a geospatial ML pipeline for a national hackathon. Deployed live solutions
-                        on Postgres, MySQL, and MongoDB.</div>
+                        internship), a geospatial ML pipeline for a national hackathon, and a drone-video-to-3D
+                        reconstruction pipeline. Live on Postgres, MySQL, and MongoDB.</div>
                 </div>
             </div>
         </div>
@@ -384,6 +389,14 @@
                         real-time chat, skill marketplace.</div>
                 </div>
                 <div class="project">
+                    <div class="project-title">aerotwin</div>
+                    <div class="project-tech">Python • COLMAP • OpenCV • Three.js • <a
+                            href="https://aerotwin.github.io/drone-video-to-3d/?demo" class="live-link">Live ↗</a>
+                    </div>
+                    <div class="project-desc">Drone video + GPS in, georeferenced 3D model out. 8:37 flight processed in 11 min, 131/131 frames registered at 0.54 px. Offline browser
+                        viewer for distance, height, area, volume.</div>
+                </div>
+                <div class="project">
                     <div class="project-title">Geo-Intel AI Pipeline</div>
                     <div class="project-tech">Python • scikit-learn • WhiteboxTools • GeoPandas</div>
                     <div class="project-desc">National hackathon project: LiDAR → Digital Terrain Model, ML land-use
@@ -423,6 +436,7 @@
                         Anthropic</span></div>
                 <div class="cert"><span class="cert-title">MCP Advanced Topics</span> <span class="cert-issuer">•
                         Anthropic</span></div>
+                <div class="cert"><span class="cert-title">Innovation Award, National AI/ML Hackathon</span> <span class="cert-issuer">• IIT Tirupati</span></div>
             </div>
         </div>
     </div>

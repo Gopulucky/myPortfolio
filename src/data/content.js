@@ -7,8 +7,8 @@ export const profile = {
   heroDescription:
     "I build scalable, user-centric web applications and intelligent systems — turning complex problems into elegant, efficient code.",
   bio: [
-    "I'm a Software Engineer who builds full-stack platforms end-to-end — from a Stripe-integrated 3D commerce marketplace to a real-time skill-trading app to an AI-driven geospatial pipeline. Every project below is live, internship-shipped, or backed by a working pipeline I can walk you through line by line.",
-    "Recent work spans a marketplace with an AI recommendation layer (Next.js, FastAPI, pgvector), a time-banking platform built during the RTRP internship program (React, Node/Express, MySQL), a Random-Forest geospatial pipeline built for a national hackathon (scikit-learn, WhiteboxTools), and a from-scratch photogrammetry + physics engine for a real-estate prototype (Three.js, COLMAP, OpenMVS). I move comfortably across React/Next.js, Node/FastAPI backends, and SQL/NoSQL databases.",
+    "I'm a Software Engineer who builds full-stack platforms end-to-end — from a Stripe-integrated 3D commerce marketplace to a real-time skill-trading app to AI-driven geospatial and drone-mapping pipelines. Every project below is live, internship-shipped, or backed by a working pipeline I can walk you through line by line.",
+    "Recent work spans a marketplace with an AI recommendation layer (Next.js, FastAPI, pgvector), a time-banking platform built during the RTRP internship program (React, Node/Express, MySQL), a Random-Forest geospatial pipeline built for a national hackathon (scikit-learn, WhiteboxTools), a drone-video-to-3D reconstruction pipeline with a browser measurement viewer (COLMAP, OpenCV, Three.js), and a from-scratch photogrammetry + physics engine for a real-estate prototype (Three.js, COLMAP, OpenMVS). I move comfortably across React/Next.js, Node/FastAPI backends, and SQL/NoSQL databases.",
   ],
   email: "gopuhardik@gmail.com",
   github: "https://github.com/Gopulucky",
@@ -55,7 +55,7 @@ export const timeline = [
     title: "Software Developer",
     org: "Freelance, Internship & Personal Projects",
     description:
-      "Shipped a 3D commerce marketplace with Stripe payments and AI-powered search, a time-banking platform during the RTRP internship program, and a geospatial ML pipeline for a national hackathon — across React/Next.js and Node/FastAPI backends, on Postgres, MySQL, and MongoDB.",
+      "Shipped a 3D commerce marketplace with Stripe payments and AI-powered search, a time-banking platform during the RTRP internship program, a geospatial ML pipeline for a national hackathon, and a drone-video-to-3D reconstruction pipeline — across React/Next.js and Node/FastAPI backends, on Postgres, MySQL, and MongoDB.",
   },
 ];
 
@@ -95,6 +95,13 @@ export const certifications = [
     image: "/images/cert_5.png",
     pdf: "/certificates/certificate%204.pdf",
   },
+  {
+    id: 6,
+    title: "Innovation Recognition Award — National AI/ML Geospatial Hackathon",
+    issuer: "IIT Tirupati Navavishkar I-Hub Foundation · MoPR · NIC",
+    image: "/images/cert_6.png",
+    pdf: "/certificates/iittnif-innovation-recognition.pdf",
+  },
 ];
 
 export const projects = [
@@ -118,6 +125,17 @@ export const projects = [
     highlight: "10-connection pooled MySQL backend, JWT sessions, bcrypt-hashed auth",
     tech: ["React", "Node.js", "Express", "MySQL"],
     github: "https://github.com/Gopulucky/RTRP",
+  },
+  {
+    id: "aerotwin",
+    title: "aerotwin",
+    subtitle: "Drone Video → Measurable 3D Model",
+    description:
+      "A reconstruction pipeline that turns one drone video plus GPS telemetry into a georeferenced 3D mesh, point cloud and GeoTIFF surface model (GPS-prior COLMAP, YOLOv8 masking), with an offline Three.js viewer for distance, height, area and volume.",
+    highlight: "8:37 flight → 3D model in 11 min on a Colab T4 · 131/131 frames at 0.54px error",
+    tech: ["Python", "COLMAP", "OpenCV", "Three.js"],
+    github: "https://github.com/aerotwin/drone-video-to-3d",
+    live: "https://aerotwin.github.io/drone-video-to-3d/?demo",
   },
   {
     id: "geo-intel",
