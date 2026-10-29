@@ -1,8 +1,8 @@
-import { useRef } from "react";
+import { useRef, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Float, MeshDistortMaterial } from "@react-three/drei";
 
-function DistortedBlob({ reducedMotion }) {
+function DistortedBlob({ reducedMotion, color }) {
   const meshRef = useRef();
 
   useFrame((state, delta) => {
@@ -21,7 +21,7 @@ function DistortedBlob({ reducedMotion }) {
       <mesh ref={meshRef} scale={1.6}>
         <icosahedronGeometry args={[1, 6]} />
         <MeshDistortMaterial
-          color="#C1602A"
+          color={color}
           roughness={0.25}
           metalness={0.1}
           distort={reducedMotion ? 0.22 : 0.4}
@@ -33,16 +33,25 @@ function DistortedBlob({ reducedMotion }) {
 }
 
 export default function HeroScene({ reducedMotion = false }) {
+  const colors = useMemo(() => {
+    const styles = getComputedStyle(document.documentElement);
+    return {
+      sculpture: styles.getPropertyValue("--color-sculpture").trim(),
+      paper: styles.getPropertyValue("--color-ivory").trim(),
+      moss: styles.getPropertyValue("--color-moss").trim(),
+    };
+  }, []);
   return (
     <Canvas
+      frameloop={reducedMotion ? "demand" : "always"}
       dpr={[1, 1.5]}
       camera={{ position: [0, 0, 4.2], fov: 42 }}
       gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
     >
       <ambientLight intensity={0.6} />
-      <directionalLight position={[3, 3, 3]} intensity={1.1} color="#FAF7F2" />
-      <pointLight position={[-3, -2, -2]} intensity={0.8} color="#2F6F5E" />
-      <DistortedBlob reducedMotion={reducedMotion} />
+      <directionalLight position={[3, 3, 3]} intensity={1.1} color={colors.paper} />
+      <pointLight position={[-3, -2, -2]} intensity={0.8} color={colors.moss} />
+      <DistortedBlob reducedMotion={reducedMotion} color={colors.sculpture} />
     </Canvas>
   );
 }

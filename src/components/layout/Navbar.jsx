@@ -25,33 +25,32 @@ export default function Navbar({ reducedMotion }) {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 border-b transition-colors ${
-        scrolled ? "border-charcoal/10 bg-ivory/85 backdrop-blur-md" : "border-transparent bg-transparent"
-      }`}
+      className={`site-header ${scrolled ? "is-scrolled" : ""}`}
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <div className="container nav-inner">
         <a
           href="#hero"
           onClick={(e) => handleNavClick(e, "#hero")}
-          className="text-xl font-semibold tracking-tight text-charcoal"
+          className="wordmark"
+          aria-label="Gopu Hardik, home"
         >
           {profile.initials}
         </a>
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="desktop-nav" aria-label="Main navigation">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={(e) => handleNavClick(e, link.href)}
-              className="text-sm font-medium text-charcoal-soft transition-colors hover:text-terracotta"
+              className={`nav-link ${link.href === "#contact" ? "nav-contact" : ""}`}
             >
               {link.label}
             </a>
           ))}
         </nav>
 
-        <div className="hidden items-center gap-4 md:flex">
+        <div className="desktop-nav nav-extras">
           <a
             href={profile.github}
             target="_blank"
@@ -74,7 +73,7 @@ export default function Navbar({ reducedMotion }) {
             href={profile.resumeUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-charcoal px-4 py-2 text-sm font-medium text-ivory transition-colors hover:bg-terracotta"
+            className="nav-link nav-resume"
           >
             <FileTextIcon className="h-4 w-4" />
             Resume
@@ -86,7 +85,8 @@ export default function Navbar({ reducedMotion }) {
           onClick={() => setOpen((v) => !v)}
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
-          className="text-charcoal md:hidden"
+          className="menu-toggle"
+          aria-controls="mobile-menu"
         >
           {open ? <CloseIcon className="h-6 w-6" /> : <MenuIcon className="h-6 w-6" />}
         </button>
@@ -95,19 +95,20 @@ export default function Navbar({ reducedMotion }) {
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
             transition={{ duration: reducedMotion ? 0 : 0.25, ease: "easeInOut" }}
-            className="overflow-hidden border-t border-charcoal/10 bg-ivory md:hidden"
+            className="mobile-menu"
+            id="mobile-menu"
           >
-            <nav className="flex flex-col gap-1 px-6 py-4">
+            <nav className="container mobile-nav" aria-label="Mobile navigation">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className="rounded-lg px-2 py-2.5 text-base font-medium text-charcoal transition-colors hover:bg-terracotta/10 hover:text-terracotta"
+                  className="nav-link"
                 >
                   {link.label}
                 </a>
@@ -123,7 +124,7 @@ export default function Navbar({ reducedMotion }) {
                   href={profile.resumeUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="ml-auto inline-flex items-center gap-2 rounded-full bg-charcoal px-4 py-2 text-sm font-medium text-ivory"
+                  className="nav-link ml-auto"
                 >
                   <FileTextIcon className="h-4 w-4" />
                   Resume

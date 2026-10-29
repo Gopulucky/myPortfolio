@@ -17,10 +17,10 @@ export default function App() {
       <Navbar reducedMotion={reducedMotion} />
       <main>
         <Hero reducedMotion={reducedMotion} />
+        <Projects reducedMotion={reducedMotion} />
         <About />
         <Experience />
         <Certifications />
-        <Projects reducedMotion={reducedMotion} />
         <Contact />
       </main>
       <Footer />

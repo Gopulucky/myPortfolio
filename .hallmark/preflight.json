@@ -1,0 +1,14 @@
+{
+  "scanned": "2026-10-29",
+  "findings": {
+    "framework": "React 19 and Vite 8; Tailwind CSS 4 (package.json:12)",
+    "fonts": "Self-hosted Inter Variable (original src/index.css:15)",
+    "palette": "Named ivory, charcoal, terracotta, and moss tokens (original src/index.css:4)",
+    "motion": "Framer Motion and React Three Fiber with an existing reduced-motion hook",
+    "routes": "/ (six anchor sections), /resume.html (printable document)",
+    "assets": "Six certificate images and six PDFs; existing WebGL hero scene",
+    "git": "Tracked files initially clean; user explicitly approved leaving two untracked résumé PDFs untouched"
+  },
+  "preserve": ["framework", "content data", "routes and section ids", "links and event handlers", "palette", "Inter body face", "3D interaction", "resume printing"],
+  "introduce": ["Georgia display face", "project-first reading order", "editorial project rows", "primary contact action", "accessible controls", "motion playback control"]
+}

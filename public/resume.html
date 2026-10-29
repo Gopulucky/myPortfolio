@@ -28,10 +28,14 @@
             --border-color: #e8e0d5;
             --accent: #c1602a;
             --accent-secondary: #2f6f5e;
+            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-display: Georgia, 'Times New Roman', serif;
+            --button-ink: #faf7f2;
+            --accent-hover: #843b16;
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: var(--font-body);
             font-size: 10pt;
             line-height: 1.4;
             color: var(--text-main);
@@ -55,6 +59,7 @@
         }
 
         .name {
+            font-family: var(--font-display);
             font-size: 28pt;
             font-weight: 400;
             letter-spacing: -0.04em;
@@ -275,19 +280,31 @@
             right: 15px;
             padding: 12px 24px;
             background: var(--accent);
-            color: white;
+            color: var(--button-ink);
             border: none;
             cursor: pointer;
             font-size: 13px;
             font-weight: 500;
-            border-radius: 100px;
-            font-family: 'Inter', sans-serif;
-            transition: all 0.2s;
+            border-radius: 3px;
+            font-family: var(--font-body);
+            transition: background-color 0.2s;
         }
 
         .print-btn:hover {
-            background: #a34e20;
+            background: var(--accent-hover);
         }
+        html, body { overflow-x: clip; }
+        a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-secondary); outline-offset: 3px; }
+        .print-btn:active { background: var(--text-main); }
+        @media screen and (max-width: 640px) {
+            body { padding: 16px; }
+            .resume { padding: 24px 20px; }
+            .two-col { grid-template-columns: minmax(0, 1fr); }
+            .contact { gap: 10px; overflow-wrap: anywhere; }
+            .print-btn { position: static; display: block; margin: 0 0 16px auto; }
+            .item-header { flex-wrap: wrap; gap: 4px; }
+        }
+        @media (prefers-reduced-motion: reduce) { .print-btn { transition: none; } }
     </style>
 </head>
 

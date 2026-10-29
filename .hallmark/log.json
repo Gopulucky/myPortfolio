@@ -1,0 +1,51 @@
+[
+ {
+  "date": "2026-10-29",
+  "mode": "redesign",
+  "depth": "full",
+  "scope": "site",
+  "shape": "Portfolio Index",
+  "theme": "brand",
+  "axes": "warm / serif / terracotta",
+  "hero": "Index, name-led with the original 3D scene at supporting scale",
+  "nav": "editorial three-part bar",
+  "footer": "colophon",
+  "imagery": "six existing certificate images and the original WebGL scene",
+  "photos": [],
+  "entry": "name-led introduction, contact action, project rows",
+  "fingerprint": [
+   "name-led",
+   "ruled project rows",
+   "split biography",
+   "experience list",
+   "certificate grid",
+   "contact close"
+  ],
+  "sections": [
+   "hero",
+   "projects",
+   "about",
+   "experience",
+   "certifications",
+   "contact",
+   "footer"
+  ],
+  "signature": "large serif name and real project outcomes in a scannable work index",
+  "waived": [],
+  "prompt": "Editorial portfolio for recruiters, with contacting Gopu Hardik as the primary action; preserve content, routes, functionality, and framework",
+  "validation": {
+   "before": {
+    "fails": 14,
+    "reflex": 8
+   },
+   "after": {
+    "fails": 0,
+    "reflex": 0,
+    "warns": 0
+   },
+   "keptLinks": "35/35",
+   "keptHandlers": "5/5",
+   "keptFigures": "6/6"
+  }
+ }
+]

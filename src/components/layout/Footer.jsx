@@ -5,10 +5,10 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-charcoal/10 bg-ivory-dim">
-      <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-6 py-8 text-sm text-charcoal-soft sm:flex-row sm:justify-between">
+    <footer className="site-footer">
+      <div className="container footer-inner">
         <p>
-          Designed &amp; built by {profile.name} · {year}
+          Designed &amp; built by {profile.name} <span className="footer-year">{year}</span>
         </p>
         <div className="flex items-center gap-5">
           <a

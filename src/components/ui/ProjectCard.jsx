@@ -1,6 +1,6 @@
 import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
 import { fadeUp } from "../../lib/motion";
-import { FolderIcon, GithubIcon, ExternalLinkIcon } from "./Icons";
+import { GithubIcon, ExternalLinkIcon } from "./Icons";
 
 export default function ProjectCard({ project, reducedMotion }) {
   const x = useMotionValue(0);
@@ -11,8 +11,8 @@ export default function ProjectCard({ project, reducedMotion }) {
   function handleMouseMove(event) {
     if (reducedMotion) return;
     const rect = event.currentTarget.getBoundingClientRect();
-    x.set((event.clientX - rect.left) / rect.width - 0.5);
-    y.set((event.clientY - rect.top) / rect.height - 0.5);
+    x.set(((event.clientX - rect.left) / rect.width - 0.5) * 0.08);
+    y.set(((event.clientY - rect.top) / rect.height - 0.5) * 0.08);
   }
 
   function handleMouseLeave() {
@@ -30,19 +30,29 @@ export default function ProjectCard({ project, reducedMotion }) {
         rotateY: reducedMotion ? 0 : rotateY,
         transformPerspective: 800,
       }}
-      className="flex flex-col rounded-2xl border border-charcoal/10 bg-white/60 p-6 shadow-sm transition-shadow hover:shadow-lg hover:border-terracotta/40"
+      className="project-row"
     >
-      <div className="mb-4 flex items-center justify-between">
-        <FolderIcon className="h-7 w-7 text-terracotta" />
-        <div className="flex items-center gap-3">
+      <div className="project-identity">
+        <h3>{project.title}</h3>
+        {project.subtitle && <p className="project-subtitle">{project.subtitle}</p>}
+      </div>
+      <div className="project-detail">
+        <p className="project-description">{project.description}</p>
+        {project.highlight && <p className="project-highlight">{project.highlight}</p>}
+        <ul className="project-tech">
+          {project.tech.map((tech) => <li key={tech}>{tech}</li>)}
+        </ul>
+      </div>
+        <div className="project-links">
           <a
             href={project.github}
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`${project.title} on GitHub`}
-            className="text-charcoal-soft transition-colors hover:text-terracotta"
+            className="text-link"
           >
             <GithubIcon className="h-5 w-5" />
+            Source
           </a>
           {project.live && (
             <a
@@ -50,29 +60,13 @@ export default function ProjectCard({ project, reducedMotion }) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`${project.title} live site`}
-              className="text-charcoal-soft transition-colors hover:text-terracotta"
+              className="text-link"
             >
               <ExternalLinkIcon className="h-5 w-5" />
+              Live site
             </a>
           )}
         </div>
-      </div>
-
-      <h3 className="text-lg font-semibold text-charcoal">{project.title}</h3>
-      {project.subtitle && <p className="mt-0.5 text-sm font-medium text-terracotta">{project.subtitle}</p>}
-      <p className="mt-2 flex-1 text-sm leading-relaxed text-charcoal-soft">{project.description}</p>
-
-      {project.highlight && (
-        <p className="mt-3 border-l-2 border-moss/50 pl-3 text-xs font-medium text-moss-dark">{project.highlight}</p>
-      )}
-
-      <ul className="mt-4 flex flex-wrap gap-2">
-        {project.tech.map((tech) => (
-          <li key={tech} className="rounded-full bg-moss/10 px-3 py-1 text-xs font-medium text-moss-dark">
-            {tech}
-          </li>
-        ))}
-      </ul>
     </motion.article>
   );
 }

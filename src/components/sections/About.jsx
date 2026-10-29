@@ -6,20 +6,20 @@ import SkillPill from "../ui/SkillPill";
 
 export default function About() {
   return (
-    <section id="about" className="scroll-mt-24 py-24 sm:py-28">
-      <div className="mx-auto max-w-6xl px-6">
+    <section id="about" className="section about-section">
+      <div className="container">
         <SectionHeading eyebrow="About" title="A little about me" />
 
-        <div className="grid gap-12 md:grid-cols-2">
+        <div className="about-layout">
           <motion.div
             variants={fadeUp}
-            initial="hidden"
+            initial={false}
             whileInView="visible"
             viewport={viewportOnce}
-            className="space-y-5"
+            className="about-prose"
           >
             {profile.bio.map((paragraph) => (
-              <p key={paragraph.slice(0, 24)} className="text-base leading-relaxed text-charcoal-soft">
+              <p key={paragraph.slice(0, 24)}>
                 {paragraph}
               </p>
             ))}
@@ -27,10 +27,10 @@ export default function About() {
 
           <motion.ul
             variants={staggerContainer}
-            initial="hidden"
+            initial={false}
             whileInView="visible"
             viewport={viewportOnce}
-            className="flex flex-wrap content-start gap-3"
+            className="skills-list"
           >
             {skills.map((skill) => (
               <SkillPill key={skill} label={skill} />

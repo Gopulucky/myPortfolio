@@ -4,11 +4,11 @@ import TimelineItem from "../ui/TimelineItem";
 
 export default function Experience() {
   return (
-    <section id="experience" className="scroll-mt-24 bg-ivory-dim py-24 sm:py-28">
-      <div className="mx-auto max-w-6xl px-6">
+    <section id="experience" className="section experience-section">
+      <div className="container experience-layout">
         <SectionHeading eyebrow="Journey" title="Experience & Education" />
 
-        <div className="max-w-2xl">
+        <div className="experience-list">
           {timeline.map((item) => (
             <TimelineItem key={item.id} item={item} />
           ))}

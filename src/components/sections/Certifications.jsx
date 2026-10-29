@@ -6,16 +6,16 @@ import CertCard from "../ui/CertCard";
 
 export default function Certifications() {
   return (
-    <section id="certifications" className="scroll-mt-24 py-24 sm:py-28">
-      <div className="mx-auto max-w-6xl px-6">
+    <section id="certifications" className="section certifications-section">
+      <div className="container">
         <SectionHeading eyebrow="Credentials" title="Certifications" />
 
         <motion.div
           variants={staggerContainer}
-          initial="hidden"
+          initial={false}
           whileInView="visible"
           viewport={viewportOnce}
-          className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+          className="certification-grid"
         >
           {certifications.map((cert) => (
             <CertCard key={cert.id} cert={cert} />

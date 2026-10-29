@@ -1,5 +1,5 @@
-import { lazy, Suspense } from "react";
-import { motion } from "framer-motion";
+import { lazy, Suspense, useState, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import { profile } from "../../data/content";
 import { fadeUp, staggerContainer } from "../../lib/motion";
 import { GithubIcon, LinkedinIcon, ChevronDownIcon, FileTextIcon } from "../ui/Icons";
@@ -7,33 +7,34 @@ import { GithubIcon, LinkedinIcon, ChevronDownIcon, FileTextIcon } from "../ui/I
 const HeroScene = lazy(() => import("../../scenes/HeroScene"));
 
 export default function Hero({ reducedMotion }) {
+  const [paused, setPaused] = useState(false);
+  const sceneRef = useRef(null);
+  const sceneVisible = useInView(sceneRef);
   return (
-    <section id="hero" className="relative flex min-h-screen items-center overflow-hidden pt-24">
-      <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 md:grid-cols-2">
-        <motion.div variants={staggerContainer} initial="hidden" animate="visible">
-          <motion.p variants={fadeUp} className="mb-4 text-sm font-semibold uppercase tracking-wider text-terracotta">
-            {profile.role}
-          </motion.p>
+    <section id="hero" className="hero">
+      <div className="container intro-layout">
+        <motion.div variants={staggerContainer} initial={false} animate="visible" className="intro-copy">
           <motion.h1
             variants={fadeUp}
-            className="text-4xl font-semibold tracking-tight text-charcoal sm:text-5xl lg:text-6xl"
+            className="display-name"
           >
             {profile.name}
           </motion.h1>
-          <motion.p variants={fadeUp} className="mt-5 max-w-lg text-lg leading-relaxed text-charcoal-soft">
+          <motion.p variants={fadeUp} className="hero-role">{profile.role}</motion.p>
+          <motion.p variants={fadeUp} className="hero-description">
             {profile.heroDescription}
           </motion.p>
 
-          <motion.div variants={fadeUp} className="mt-8 flex flex-wrap items-center gap-4">
+          <motion.div variants={fadeUp} className="hero-actions">
             <a
               href="#projects"
-              className="inline-flex items-center rounded-full bg-terracotta px-6 py-3 text-sm font-medium text-ivory transition-colors hover:bg-terracotta-dark"
+              className="text-link hero-work-link"
             >
               View my work
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center rounded-full border border-charcoal/20 px-6 py-3 text-sm font-medium text-charcoal transition-colors hover:border-terracotta hover:text-terracotta"
+              className="button button-primary"
             >
               Contact me
             </a>
@@ -41,14 +42,14 @@ export default function Hero({ reducedMotion }) {
               href={profile.resumeUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-charcoal/20 px-6 py-3 text-sm font-medium text-charcoal transition-colors hover:border-terracotta hover:text-terracotta"
+              className="text-link hero-resume-link"
             >
               <FileTextIcon className="h-4 w-4" />
               Resume
             </a>
           </motion.div>
 
-          <motion.div variants={fadeUp} className="mt-8 flex items-center gap-5">
+          <motion.div variants={fadeUp} className="hero-socials">
             <a
               href={profile.github}
               target="_blank"
@@ -70,20 +71,27 @@ export default function Hero({ reducedMotion }) {
           </motion.div>
         </motion.div>
 
-        <div className="relative h-[320px] sm:h-[420px] md:h-[480px]">
+        <div className="hero-art">
+          <div className="hero-canvas" aria-hidden="true" ref={sceneRef}>
           <Suspense fallback={<div className="h-full w-full" />}>
-            <HeroScene reducedMotion={reducedMotion} />
+            <HeroScene reducedMotion={reducedMotion || paused || !sceneVisible} />
           </Suspense>
+          </div>
+          <button type="button" className="scene-control text-link" aria-pressed={paused} onClick={() => setPaused((value) => !value)} disabled={reducedMotion}>
+            {reducedMotion ? "Motion reduced" : paused ? "Play 3D animation" : "Pause 3D animation"}
+          </button>
         </div>
-      </div>
-
+        <div className="hero-foot">
+          <p>{profile.tagline}</p>
       <a
         href="#about"
         aria-label="Scroll to About section"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-charcoal-soft transition-colors hover:text-terracotta"
+        className="hero-about-link text-link"
       >
-        <ChevronDownIcon className="h-6 w-6 animate-bounce motion-reduce:animate-none" />
+        About me <ChevronDownIcon className="h-4 w-4" />
       </a>
+        </div>
+      </div>
     </section>
   );
 }

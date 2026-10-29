@@ -6,8 +6,8 @@ import ProjectCard from "../ui/ProjectCard";
 
 export default function Projects({ reducedMotion }) {
   return (
-    <section id="projects" className="scroll-mt-24 bg-ivory-dim py-24 sm:py-28">
-      <div className="mx-auto max-w-6xl px-6">
+    <section id="projects" className="section projects-section">
+      <div className="container">
         <SectionHeading
           eyebrow="Work"
           title="Selected projects"
@@ -16,24 +16,24 @@ export default function Projects({ reducedMotion }) {
 
         <motion.div
           variants={staggerContainer}
-          initial="hidden"
+          initial={false}
           whileInView="visible"
           viewport={viewportOnce}
-          className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+          className="project-index"
         >
           {projects.map((project) => (
             <ProjectCard key={project.id} project={project} reducedMotion={reducedMotion} />
           ))}
         </motion.div>
 
-        <div className="mt-12 flex justify-center">
+        <div className="archive-link">
           <a
             href={profile.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center rounded-full border border-charcoal/20 px-6 py-3 text-sm font-medium text-charcoal transition-colors hover:border-terracotta hover:text-terracotta"
+            className="text-link"
           >
-            View full project archive on GitHub
+            Full project archive on GitHub
           </a>
         </div>
       </div>
